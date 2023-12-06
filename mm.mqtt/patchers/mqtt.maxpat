@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 164.0, 149.0, 1186.0, 744.0 ],
+		"rect" : [ 72.0, 104.0, 1436.0, 942.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 6.5, 90.0, 375.0, 35.0 ],
-					"presentation_linecount" : 4,
 					"text" : ";\rmax launchbrowser https://github.com/L4COUR/MaxMSP-Interfacing"
 				}
 
@@ -130,7 +129,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1125.0, 485.0, 590.0, 489.0 ],
+					"patching_rect" : [ 470.5, 714.666666507720947, 590.0, 489.0 ],
 					"text" : "const mqtt = require('mqtt')\n\nconst host = 'broker.emqx.io'\nconst port = '1883'\nconst clientId = `mqtt_${Math.random().toString(16).slice(3)}`\n\nconst connectUrl = `mqtt://${host}:${port}`\n\nconst client = mqtt.connect(connectUrl, {\n  clientId,\n  clean: true,\n  connectTimeout: 4000,\n  username: 'emqx',\n  password: 'public',\n  reconnectPeriod: 1000,\n})\n\nconst topic = '/nodejs/mqtt'\n\nclient.on('connect', () => {\n  console.log('Connected')\n\n  client.subscribe([topic], () => {\n    console.log(`Subscribe to topic '${topic}'`)\n    client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {\n      if (error) {\n        console.error(error)\n      }\n    })\n  })\n})\n\nclient.on('message', (topic, payload) => {\n  console.log('Received Message:', topic, payload.toString())\n})\n"
 				}
 
@@ -286,7 +285,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 470.5, 454.5, 146.0, 22.0 ],
-					"text" : "\"21\""
+					"text" : "\"19\""
 				}
 
 			}
@@ -643,21 +642,21 @@
 		"dependency_cache" : [ 			{
 				"name" : "fit_jweb_to_bounds.js",
 				"bootpath" : "~/Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
-				"patcherrelativepath" : "../../../../Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
+				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mqtt-publisher.js",
 				"bootpath" : "~/Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
-				"patcherrelativepath" : "../../../../Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
+				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mqtt-subscriber.js",
 				"bootpath" : "~/Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
-				"patcherrelativepath" : "../../../../Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
+				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -669,8 +668,7 @@
 			}
 , 			{
 				"name" : "resize_n4m_monitor_patcher.js",
-				"bootpath" : "~/Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
-				"patcherrelativepath" : "../../../../Documents/Github/dinggoo/PUBLIC/mm.max/mm.mqtt/code",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
