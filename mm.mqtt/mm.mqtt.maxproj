@@ -2,8 +2,8 @@
 	"name" : "mm.mqtt",
 	"version" : 1,
 	"creationdate" : 3784696645,
-	"modificationdate" : 3784696748,
-	"viewrect" : [ 25.0, 118.0, 300.0, 500.0 ],
+	"modificationdate" : 3784702418,
+	"viewrect" : [ 19.0, 118.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -12,6 +12,7 @@
 		"patchers" : 		{
 			"mqtt.maxpat" : 			{
 				"kind" : "patcher",
+				"local" : 1,
 				"toplevel" : 1
 			}
 ,
