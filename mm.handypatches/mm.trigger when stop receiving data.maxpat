@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 908.0, 255.0, 640.0, 480.0 ],
+		"rect" : [ 766.0, 255.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.5, 10.0, 155.0, 33.0 ],
+					"text" : "By Mark Meeuwenoord\nwww.markmeeuwenoord.nl"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-25",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.0, 174.0, 94.0, 33.0 ],
+					"patching_rect" : [ 92.0, 174.0, 94.0, 33.0 ],
 					"text" : "after 1 sec of inactivity trigger"
 				}
 
@@ -56,7 +68,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 198.0, 51.0, 150.0, 20.0 ],
+					"patching_rect" : [ 272.0, 51.0, 150.0, 20.0 ],
 					"text" : "fake data maker"
 				}
 
@@ -68,7 +80,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 209.0, 185.0, 97.0, 22.0 ],
+					"patching_rect" : [ 283.0, 185.0, 97.0, 22.0 ],
 					"text" : "yourdata"
 				}
 
@@ -81,7 +93,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 121.0, 19.0, 20.0, 20.0 ]
+					"patching_rect" : [ 195.0, 19.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -94,7 +106,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 121.0, 49.0, 65.0, 22.0 ],
+					"patching_rect" : [ 195.0, 49.0, 65.0, 22.0 ],
 					"text" : "metro 500"
 				}
 
@@ -107,7 +119,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 186.0, 280.0, 47.0, 47.0 ]
+					"patching_rect" : [ 260.0, 280.0, 47.0, 47.0 ]
 				}
 
 			}
@@ -118,7 +130,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 186.0, 240.0, 29.5, 22.0 ],
+					"patching_rect" : [ 260.0, 240.0, 29.5, 22.0 ],
 					"text" : "!= 1"
 				}
 
@@ -131,7 +143,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 121.0, 280.0, 47.0, 47.0 ]
+					"patching_rect" : [ 195.0, 280.0, 47.0, 47.0 ]
 				}
 
 			}
@@ -143,7 +155,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 121.0, 76.0, 24.0, 24.0 ]
+					"patching_rect" : [ 195.0, 76.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -154,7 +166,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "int", "yourdata" ],
-					"patching_rect" : [ 121.0, 150.0, 82.0, 22.0 ],
+					"patching_rect" : [ 195.0, 150.0, 82.0, 22.0 ],
 					"text" : "t b 1 yourdata"
 				}
 
@@ -166,7 +178,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 121.0, 218.0, 29.5, 22.0 ],
+					"patching_rect" : [ 195.0, 218.0, 29.5, 22.0 ],
 					"text" : "0"
 				}
 
@@ -178,7 +190,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 121.0, 185.0, 55.0, 22.0 ],
+					"patching_rect" : [ 195.0, 185.0, 55.0, 22.0 ],
 					"text" : "del 1000"
 				}
 
@@ -194,7 +206,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
-					"midpoints" : [ 162.0, 267.0, 130.5, 267.0 ],
+					"midpoints" : [ 236.0, 267.0, 204.5, 267.0 ],
 					"source" : [ "obj-10", 1 ]
 				}
 
@@ -237,7 +249,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"midpoints" : [ 130.5, 337.0, 176.0, 337.0, 176.0, 229.0, 195.5, 229.0 ],
+					"midpoints" : [ 204.5, 337.0, 250.0, 337.0, 250.0, 229.0, 269.5, 229.0 ],
 					"source" : [ "obj-22", 0 ]
 				}
 

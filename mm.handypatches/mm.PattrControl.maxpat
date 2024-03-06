@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 4,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -46,7 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 68.0, 206.5, 90.0, 33.0 ],
-					"presentation_linecount" : 3,
 					"text" : "with patchchords"
 				}
 
@@ -60,7 +59,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 595.0, 241.5, 150.0, 37.0 ],
-					"presentation_linecount" : 2,
 					"text" : "also works with vizzie modules"
 				}
 
@@ -169,7 +167,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.0, 55.0, 160.0, 33.0 ],
+					"patching_rect" : [ 6.0, 55.0, 163.0, 33.0 ],
 					"text" : "send data to a beap, vizzie or auzie module"
 				}
 
@@ -302,8 +300,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 4,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -444,6 +442,7 @@
 											"parameter_initial_enable" : 1,
 											"parameter_longname" : "Mix",
 											"parameter_mmax" : 100.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "Mix",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 5
@@ -496,6 +495,7 @@
 											"parameter_longname" : "Feedback",
 											"parameter_mmax" : 0.0,
 											"parameter_mmin" : -72.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "Feedback",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
@@ -604,6 +604,7 @@
 											"parameter_mmin" : 20.0,
 											"parameter_modmax" : 20000.0,
 											"parameter_modmin" : 20.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "HPF",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 3
@@ -668,6 +669,7 @@
 											"parameter_invisible" : 1,
 											"parameter_longname" : "time",
 											"parameter_mmax" : 2000.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "Time",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 2
@@ -691,7 +693,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 39.173828, 132.0, 87.5, 22.0 ],
 									"restore" : 									{
-										"Feedback" : [ -12.0 ],
+										"Feedback" : [ -11.999999999999996 ],
 										"HPF" : [ 20.0 ],
 										"LPF" : [ 20000.0 ],
 										"Mix" : [ 50.0 ],
@@ -799,6 +801,7 @@
 											"parameter_initial_enable" : 1,
 											"parameter_longname" : "bypass",
 											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "bypass",
 											"parameter_type" : 2
 										}
@@ -893,8 +896,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 4,
+											"minor" : 6,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
