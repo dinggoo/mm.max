@@ -4,9 +4,9 @@
 #include <OSCMessage.h>
 #include <Servo.h>
 
-const char *ssid = "wifiname";          // Your WiFi SSID
-const char *password = "psww";          // Your WiFi password
-IPAddress localIP(192, 168, 1, 2);      // Your computer's IP address
+const char *ssid = "SenS";          // Your WiFi SSID
+const char *password = "sensmenow";          // Your WiFi password
+IPAddress localIP(192, 168, 188, 21);      // Your computer's IP address
 int sendPort = 8000;                    // Port to send OSC messages
 int receivePort = 9999;                 // Port to receive OSC messages
 
@@ -57,8 +57,8 @@ void loop() {
     if (!msgIn.hasError()) {
       // Get the OSC address
       const char *address = msgIn.getAddress();
-      Serial.print("Received OSC message with address: ");
-      Serial.println(address);
+     // Serial.print("Received OSC message with address: ");
+    // Serial.println(address);
 
       // Process the OSC message
       if (strcmp(address, "/readDigitalPins") == 0) {
