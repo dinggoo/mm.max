@@ -4,8 +4,8 @@
 #include <OSCMessage.h>
 #include <Servo.h>
 
-const char *ssid = "SenS";          // Your WiFi SSID
-const char *password = "sensmenow";          // Your WiFi password
+const char *ssid = "SenS";                // Your WiFi SSID
+const char *password = "sensmenow";       // Your WiFi password
 IPAddress localIP(192, 168, 188, 21);      // Your computer's IP address
 int sendPort = 8000;                    // Port to send OSC messages
 int receivePort = 9999;                 // Port to receive OSC messages
