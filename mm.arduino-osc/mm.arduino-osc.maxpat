@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 609.0, 490.0, 253.0, 24.0 ],
+					"patching_rect" : [ 608.0, 495.0, 253.0, 24.0 ],
 					"text" : " READ ANALOG PINS"
 				}
 
@@ -217,18 +217,6 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 603.0, 779.0, 60.0, 22.0 ],
 					"text" : "zl change"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-74",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 620.0, 713.0, 187.5, 24.0 ],
-					"text" : "READ ANALOG PINS  "
 				}
 
 			}
@@ -693,8 +681,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 397.0, 141.0, 453.0, 33.0 ],
-					"text" : "send OSC adress /  port\nChange the IP to the one you arduino gets in the network (see serial monitor)"
+					"patching_rect" : [ 397.0, 141.0, 531.0, 33.0 ],
+					"text" : "send OSC adress /  port\nChange the IP to the one you arduino gets in the network (see serial monitor in Arduino IDE app)"
 				}
 
 			}
@@ -707,18 +695,6 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 480.5, 234.0, 253.0, 24.0 ],
 					"text" : "WRITE TO SERVO PINS"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-124",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 56.0, 705.0, 187.5, 24.0 ],
-					"text" : "READ DIGITAL PINS  "
 				}
 
 			}
@@ -866,8 +842,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 431.0, 673.0, 150.0, 20.0 ],
-					"text" : "receive OSC  / port"
+					"patching_rect" : [ 332.0, 646.0, 150.0, 20.0 ],
+					"text" : "receive OSC on port"
 				}
 
 			}
@@ -879,7 +855,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1056.0, 340.0, 922.0, 2379.0 ],
-					"text" : "// By Mark Meeuwenoord, Henry Vega & Chat GTP 2024\n\n#include <WiFi.h>\n#include <OSCMessage.h>\n#include <Servo.h>\n\nconst char *ssid = \"wifiname\";             // Your WiFi SSID\nconst char *password = \"psww\";    // Your WiFi password\nIPAddress localIP(192, 168, 1, 2); // Your computer's IP address\nint sendPort = 8000;                  // Port to send OSC messages\nint receivePort = 9999;               // Port to receive OSC messages\n\nWiFiUDP Udp;\n\nServo servo1;\nServo servo2;\nServo servo3;\nServo servo4;\n\nvoid setup() {\n  Serial.begin(115200);\n  delay(10);\n\n  // Connect to Wi-Fi\n  Serial.println();\n  Serial.print(\"Connecting to \");\n  Serial.println(ssid);\n  WiFi.begin(ssid, password);\n  while (WiFi.status() != WL_CONNECTED) {\n    delay(1000);\n    Serial.print(\".\");\n  }\n  Serial.println(\"\");\n  Serial.println(\"WiFi connected\");\n  Serial.print(\"Local IP Address: \"); // check serial monitor in Arduino IDE to see arduino's IP adress. you need that in the udpsend setup in Max\n  Serial.println(WiFi.localIP());\n\n  // Start the UDP connection\n  Udp.begin(receivePort);\n\n  // Attach servos to pins\n  servo1.attach(5);\n  servo2.attach(6);\n  servo3.attach(9);\n  servo4.attach(10);\n}\n\nvoid loop() {\n  // Check for incoming OSC messages\n  int packetSize = Udp.parsePacket();\n  if (packetSize) {\n    OSCMessage msgIn;\n    while (packetSize--) {\n      msgIn.fill(Udp.read());\n    }\n\n    if (!msgIn.hasError()) {\n      // Get the OSC address\n      const char *address = msgIn.getAddress();\n      Serial.print(\"Received OSC message with address: \");\n      Serial.println(address);\n\n      // Process the OSC message\n      if (strcmp(address, \"/readDigitalPins\") == 0) {\n        readDigitalPins();\n      } else if (strcmp(address, \"/readAnalogPins\") == 0) {\n        readAnalogPins();\n      } else if (strcmp(address, \"/writeDigitalPins\") == 0) {\n        writeDigitalPins(msgIn);\n      } else if (strcmp(address, \"/writeAnalogPins\") == 0) {\n        writeAnalogPins(msgIn);\n      } else if (strcmp(address, \"/writeServoPins\") == 0) {\n        writeServoPins(msgIn);\n      } else {\n        Serial.println(\"Unsupported OSC address\");\n      }\n    } else {\n      Serial.println(\"Error parsing OSC message\");\n    }\n  }\n}\n\n// Function to read digital pins and send their values via OSC\nvoid readDigitalPins() {\n  OSCMessage msgOut(\"/digitalPinsData\");\n  for (int pin = 0; pin < 13; pin++) {\n    if (pin < 14) {\n      msgOut.add(digitalRead(pin));\n    }\n  }\n  Udp.beginPacket(localIP, sendPort);\n  msgOut.send(Udp);\n  Udp.endPacket();\n}\n\n// Function to read analog pins and send their values via OSC\nvoid readAnalogPins() {\n  OSCMessage msgOut(\"/analogPinsData\");\n  for (int pin = A0; pin < A5; pin++) {\n    msgOut.add(analogRead(pin));\n  }\n  Udp.beginPacket(localIP, sendPort);\n  msgOut.send(Udp);\n  Udp.endPacket();\n}\n\n// Function to write digital pins based on received OSC message\nvoid writeDigitalPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0) {\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int pin = msgIn.getInt(i);\n    int value = msgIn.getInt(i + 1);\n    if (pin >= 0 && pin < 14) {\n      pinMode(pin, OUTPUT);\n      digitalWrite(pin, value);\n    } else {\n      Serial.println(\"Invalid digital pin number\");\n    }\n  }\n}\n\n// Function to write analog pins based on received OSC message\nvoid writeAnalogPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0) {\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int pin = msgIn.getInt(i);\n    int value = msgIn.getInt(i + 1);\n    if (pin >= A0 && pin < A5) {\n      analogWrite(pin, value);\n    } else {\n      Serial.println(\"Invalid analog pin number\");\n    }\n  }\n}\n\n// Function to write servo pins based on received OSC message\nvoid writeServoPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0 || numArgs > 8) { // Assuming pairs of pin and angle, maximum 4 servos\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int servoIndex = i / 2;\n    int pin = msgIn.getInt(i);\n    int angle = msgIn.getInt(i + 1);\n    switch (servoIndex) {\n      case 0:\n        servo1.write(angle);\n        break;\n      case 1:\n        servo2.write(angle);\n        break;\n      case 2:\n        servo3.write(angle);\n        break;\n      case 3:\n        servo4.write(angle);\n        break;\n      default:\n        Serial.println(\"Invalid servo index\");\n        break;\n    }\n  }\n}\n"
+					"text" : "// By Mark Meeuwenoord & Henry Vega\n\n#include <WiFi.h>\n#include <OSCMessage.h>\n#include <Servo.h>\n\nconst char *ssid = \"wifiname\";             // Your WiFi SSID\nconst char *password = \"psww\";    // Your WiFi password\nIPAddress localIP(192, 168, 1, 2); // Your computer's IP address\nint sendPort = 8000;                  // Port to send OSC messages\nint receivePort = 9999;               // Port to receive OSC messages\n\nWiFiUDP Udp;\n\nServo servo1;\nServo servo2;\nServo servo3;\nServo servo4;\n\nvoid setup() {\n  Serial.begin(115200);\n  delay(10);\n\n  // Connect to Wi-Fi\n  Serial.println();\n  Serial.print(\"Connecting to \");\n  Serial.println(ssid);\n  WiFi.begin(ssid, password);\n  while (WiFi.status() != WL_CONNECTED) {\n    delay(1000);\n    Serial.print(\".\");\n  }\n  Serial.println(\"\");\n  Serial.println(\"WiFi connected\");\n  Serial.print(\"Local IP Address: \"); // check serial monitor in Arduino IDE to see arduino's IP adress. you need that in the udpsend setup in Max\n  Serial.println(WiFi.localIP());\n\n  // Start the UDP connection\n  Udp.begin(receivePort);\n\n  // Attach servos to pins\n  servo1.attach(5);\n  servo2.attach(6);\n  servo3.attach(9);\n  servo4.attach(10);\n}\n\nvoid loop() {\n  // Check for incoming OSC messages\n  int packetSize = Udp.parsePacket();\n  if (packetSize) {\n    OSCMessage msgIn;\n    while (packetSize--) {\n      msgIn.fill(Udp.read());\n    }\n\n    if (!msgIn.hasError()) {\n      // Get the OSC address\n      const char *address = msgIn.getAddress();\n      Serial.print(\"Received OSC message with address: \");\n      Serial.println(address);\n\n      // Process the OSC message\n      if (strcmp(address, \"/readDigitalPins\") == 0) {\n        readDigitalPins();\n      } else if (strcmp(address, \"/readAnalogPins\") == 0) {\n        readAnalogPins();\n      } else if (strcmp(address, \"/writeDigitalPins\") == 0) {\n        writeDigitalPins(msgIn);\n      } else if (strcmp(address, \"/writeAnalogPins\") == 0) {\n        writeAnalogPins(msgIn);\n      } else if (strcmp(address, \"/writeServoPins\") == 0) {\n        writeServoPins(msgIn);\n      } else {\n        Serial.println(\"Unsupported OSC address\");\n      }\n    } else {\n      Serial.println(\"Error parsing OSC message\");\n    }\n  }\n}\n\n// Function to read digital pins and send their values via OSC\nvoid readDigitalPins() {\n  OSCMessage msgOut(\"/digitalPinsData\");\n  for (int pin = 0; pin < 13; pin++) {\n    if (pin < 14) {\n      msgOut.add(digitalRead(pin));\n    }\n  }\n  Udp.beginPacket(localIP, sendPort);\n  msgOut.send(Udp);\n  Udp.endPacket();\n}\n\n// Function to read analog pins and send their values via OSC\nvoid readAnalogPins() {\n  OSCMessage msgOut(\"/analogPinsData\");\n  for (int pin = A0; pin < A5; pin++) {\n    msgOut.add(analogRead(pin));\n  }\n  Udp.beginPacket(localIP, sendPort);\n  msgOut.send(Udp);\n  Udp.endPacket();\n}\n\n// Function to write digital pins based on received OSC message\nvoid writeDigitalPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0) {\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int pin = msgIn.getInt(i);\n    int value = msgIn.getInt(i + 1);\n    if (pin >= 0 && pin < 14) {\n      pinMode(pin, OUTPUT);\n      digitalWrite(pin, value);\n    } else {\n      Serial.println(\"Invalid digital pin number\");\n    }\n  }\n}\n\n// Function to write analog pins based on received OSC message\nvoid writeAnalogPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0) {\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int pin = msgIn.getInt(i);\n    int value = msgIn.getInt(i + 1);\n    if (pin >= A0 && pin < A5) {\n      analogWrite(pin, value);\n    } else {\n      Serial.println(\"Invalid analog pin number\");\n    }\n  }\n}\n\n// Function to write servo pins based on received OSC message\nvoid writeServoPins(OSCMessage &msgIn) {\n  int numArgs = msgIn.size();\n  if (numArgs % 2 != 0 || numArgs > 8) { // Assuming pairs of pin and angle, maximum 4 servos\n    Serial.println(\"Invalid number of arguments\");\n    return;\n  }\n\n  for (int i = 0; i < numArgs; i += 2) {\n    int servoIndex = i / 2;\n    int pin = msgIn.getInt(i);\n    int angle = msgIn.getInt(i + 1);\n    switch (servoIndex) {\n      case 0:\n        servo1.write(angle);\n        break;\n      case 1:\n        servo2.write(angle);\n        break;\n      case 2:\n        servo3.write(angle);\n        break;\n      case 3:\n        servo4.write(angle);\n        break;\n      default:\n        Serial.println(\"Invalid servo index\");\n        break;\n    }\n  }\n}\n"
 				}
 
 			}
