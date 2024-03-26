@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1065.0, 983.0 ],
+		"rect" : [ 34.0, 87.0, 1065.0, 679.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 302.0, 836.0, 48.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "servo pins"
 				}
 
@@ -132,7 +131,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 196.0, 832.0, 48.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "servo pins"
 				}
 
@@ -359,7 +357,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 674.0, 611.0, 321.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "speed of readout. change if stability issues occur"
 				}
 
@@ -371,7 +368,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 676.0, 558.0, 150.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "read analog pins ON/OFF"
 				}
 
@@ -383,7 +379,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 114.0, 542.0, 139.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "read digtal pins ON/OFF"
 				}
 
@@ -1067,8 +1062,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 64.0, 141.0, 171.0, 22.0 ],
-					"text" : "udpsend 192.168.188.74 9999"
+					"patching_rect" : [ 64.0, 141.0, 158.0, 22.0 ],
+					"text" : "udpsend 192.168.0.27 9999"
 				}
 
 			}

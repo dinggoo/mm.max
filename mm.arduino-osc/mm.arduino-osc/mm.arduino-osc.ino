@@ -1,12 +1,12 @@
-// By Mark Meeuwenoord, Henry Vega & Chat GTP 2024
+// By Mark Meeuwenoord, Henry Vega
 
 #include <WiFi.h>
 #include <OSCMessage.h>
 #include <Servo.h>
 
-const char *ssid = "SenS";                // Your WiFi SSID
-const char *password = "sensmenow";       // Your WiFi password
-IPAddress localIP(192, 168, 188, 21);      // Your computer's IP address
+const char *ssid = "robolab";                // Your WiFi SSID
+const char *password = "robolab4you";       // Your WiFi password
+IPAddress localIP(192, 168, 0, 25);      // Your computer's IP address
 int sendPort = 8000;                    // Port to send OSC messages
 int receivePort = 9999;                 // Port to receive OSC messages
 
@@ -18,7 +18,7 @@ Servo servo3;
 Servo servo4;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(10);
 
   // Connect to Wi-Fi
