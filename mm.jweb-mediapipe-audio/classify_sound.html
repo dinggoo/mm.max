@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Audio Classification</title>
+    <style>
+        body { margin: 20px; font-family: Arial, sans-serif; }
+        #demos { margin-top: 20px; }
+        .invisible { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Audio Classification in Max/MSP with MediaPipe</h1>
+    <div id="demos" class="invisible">
+        <button id="classifyBtn1">Classify Audio 1</button>
+        <button id="classifyBtn2">Classify Audio 2</button>
+        <button id="microBt">Start Microphone Classification</button>
+        <select id="audioDeviceSelect"></select>
+        <audio id="audioClip1" src="audio1.mp3"></audio>
+        <audio id="audioClip2" src="audio2.mp3"></audio>
+        <table id="audioResult1"></table>
+        <table id="audioResult2"></table>
+        <div id="microResult"></div>
+    </div>
+    <script src="audio_classification.js"></script>
+</body>
+</html>
