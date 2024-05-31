@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 3118.0, 87.0, 320.0, 416.0 ],
+		"rect" : [ 133.0, 205.0, 535.0, 525.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,25 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 11.0, 11.0, 150.0, 60.0 ],
+					"text" : "Digital Pin Switcher Analog readout:  \nWriten by Mark Meeuwneoord 2024"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"dontreplace" : 1,
 					"id" : "obj-54",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 119.5, 371.0, 50.0, 22.0 ],
+					"patching_rect" : [ 120.0, 440.0, 50.0, 22.0 ],
 					"text" : "566"
 				}
 
@@ -57,8 +70,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 69.5, 158.0, 51.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 70.0, 227.0, 51.0, 22.0 ],
 					"text" : "poll 100"
 				}
 
@@ -72,7 +84,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 150.5, 339.0, 73.0, 22.0 ],
+					"patching_rect" : [ 151.0, 408.0, 73.0, 22.0 ],
 					"text" : "fromsymbol"
 				}
 
@@ -86,7 +98,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 150.5, 248.0, 55.0, 22.0 ],
+					"patching_rect" : [ 151.0, 302.0, 55.0, 22.0 ],
 					"text" : "route 13"
 				}
 
@@ -100,7 +112,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 150.5, 279.0, 53.0, 22.0 ],
+					"patching_rect" : [ 151.0, 340.0, 53.0, 22.0 ],
 					"text" : "zl group"
 				}
 
@@ -114,7 +126,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 150.5, 308.0, 36.0, 22.0 ],
+					"patching_rect" : [ 151.0, 377.0, 36.0, 22.0 ],
 					"text" : "itoa"
 				}
 
@@ -126,7 +138,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 21.0, 158.0, 37.0, 22.0 ],
+					"patching_rect" : [ 21.0, 227.0, 37.0, 22.0 ],
 					"text" : "poll 0"
 				}
 
@@ -138,8 +150,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 150.5, 8.5, 79.0, 33.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 151.0, 78.0, 79.0, 33.0 ],
 					"text" : "connect relay to pin 8"
 				}
 
@@ -151,7 +162,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 64.0, 15.0, 79.0, 33.0 ],
+					"patching_rect" : [ 64.0, 84.0, 79.0, 33.0 ],
 					"text" : "Onboard led == pin 13"
 				}
 
@@ -162,7 +173,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 358.0, 15.0, 150.0, 20.0 ],
+					"patching_rect" : [ 358.0, 84.0, 150.0, 20.0 ],
 					"text" : "Arduino code"
 				}
 
@@ -174,8 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 69.5, 51.0, 32.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 70.0, 120.0, 32.0, 22.0 ],
 					"text" : "13 1"
 				}
 
@@ -187,8 +197,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 106.5, 51.0, 32.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 107.0, 120.0, 32.0, 22.0 ],
 					"text" : "13 0"
 				}
 
@@ -200,7 +209,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 366.0, 37.0, 594.0, 368.0 ],
+					"patching_rect" : [ 366.0, 106.0, 594.0, 368.0 ],
 					"text" : "/*\nDigital Pin Switcher:  Writen by Mark Meeuwneoord 2023\n*/\n\nvoid setup()\n{\n  Serial.begin(9600);\n\n  for (int i = 2; i <= 13; i++) { // 13 digital pins on Arduino UNO\n    pinMode(i, OUTPUT);\n  }\n}\n\nvoid loop()\n{\n  while (Serial.available() > 0) {\n    int pinNo = Serial.parseInt();  // look for the next valid integer in serialstream: This is your pin number.\n    int pinValue = Serial.parseInt(); // do it again: This is the pin state (high / low) \n\n  if (Serial.read() == '\\n') {\n      {\n        digitalWrite (pinNo, pinValue);\n        }\n    }\n  }\n}\n"
 				}
 
@@ -212,7 +221,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 150.5, 51.0, 29.5, 22.0 ],
+					"patching_rect" : [ 151.0, 120.0, 29.5, 22.0 ],
 					"text" : "8 1"
 				}
 
@@ -224,7 +233,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 187.5, 51.0, 29.5, 22.0 ],
+					"patching_rect" : [ 188.0, 120.0, 29.5, 22.0 ],
 					"text" : "8 0"
 				}
 
@@ -236,8 +245,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 266.0, 158.0, 37.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 266.0, 227.0, 37.0, 22.0 ],
 					"text" : "close"
 				}
 
@@ -249,8 +257,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 266.0, 129.0, 35.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 266.0, 198.0, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -262,7 +269,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 266.0, 99.0, 32.0, 22.0 ],
+					"patching_rect" : [ 266.0, 168.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -274,7 +281,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 150.5, 129.0, 65.0, 22.0 ],
+					"patching_rect" : [ 151.0, 198.0, 65.0, 22.0 ],
 					"text" : "append 10"
 				}
 
@@ -286,7 +293,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 150.5, 99.0, 40.0, 22.0 ],
+					"patching_rect" : [ 151.0, 168.0, 40.0, 22.0 ],
 					"text" : "atoi"
 				}
 
@@ -298,8 +305,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 150.5, 193.0, 77.0, 22.0 ],
-					"text" : "serial c 9600"
+					"patching_rect" : [ 151.0, 262.0, 117.0, 22.0 ],
+					"text" : "serial # 9600 @dtr 1"
 				}
 
 			}
