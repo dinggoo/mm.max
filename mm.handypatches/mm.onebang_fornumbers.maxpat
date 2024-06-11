@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 94.0, 155.0, 640.0, 480.0 ],
+		"rect" : [ 82.0, 254.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -82,7 +82,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 172.0, 15.0, 252.0, 33.0 ],
 					"presentation_linecount" : 3,
-					"text" : "Onebang for numbers.\nOnly let the first number through until reset."
+					"text" : "Onebang for numbers.\nOnly pass the first number through until reset."
 				}
 
 			}

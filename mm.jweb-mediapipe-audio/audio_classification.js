@@ -8,7 +8,7 @@
 //
 
 (async () => {
-    const { AudioClassifier, FilesetResolver } = await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-audio@0.10.0");
+    const { AudioClassifier, FilesetResolver } = await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-audio@0.10.9");
     const demosSection = document.getElementById("demos");
     let isPlaying = false;
     let audioClassifier;
