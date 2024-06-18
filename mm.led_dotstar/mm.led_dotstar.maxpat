@@ -355,7 +355,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 55.0, 246.0, 150.515455484390259, 22.0 ],
-					"text" : "0 0 255"
+					"text" : "0 15 255 176 255"
 				}
 
 			}
@@ -416,7 +416,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.0, 342.0, 73.0, 22.0 ],
-					"text" : "speedlim 20"
+					"text" : "speedlim 50"
 				}
 
 			}
@@ -452,7 +452,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.0, 427.0, 65.0, 22.0 ],
-					"text" : "append 13"
+					"text" : "append 10"
 				}
 
 			}
