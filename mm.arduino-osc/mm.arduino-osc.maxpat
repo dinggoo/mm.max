@@ -1063,7 +1063,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 64.0, 141.0, 158.0, 22.0 ],
-					"text" : "udpsend 192.168.0.27 9999"
+					"text" : "udpsend 192.168.0.25 9999"
 				}
 
 			}

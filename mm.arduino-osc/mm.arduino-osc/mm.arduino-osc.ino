@@ -4,9 +4,9 @@
 #include <OSCMessage.h>
 #include <Servo.h>
 
-const char *ssid = "wifiname";                // Your WiFi SSID
-const char *password = "pass-here";       // Your WiFi password
-IPAddress localIP(192, 168, 1, 100);      // Your computer's IP address
+const char *ssid = "robolab";                // Your WiFi SSID
+const char *password = "robolab4you";       // Your WiFi password
+IPAddress localIP(192, 168, 0, 21);      // Your computer's IP address
 int sendPort = 8000;                    // Port to send OSC messages
 int receivePort = 9999;                 // Port to receive OSC messages
 
