@@ -10,7 +10,7 @@ Edits by Mark Meeuwenoord 2024
 #include <Adafruit_DotStar.h>
 #include <SPI.h>  // COMMENT OUT THIS LINE FOR GEMMA OR TRINKET
 
-#define NUMPIXELS 144  // Number of LEDs in strip
+#define NUMPIXELS 8  // Number of LEDs in strip
 
 // Here's how to control the LEDs from any two pins:
 #define DATAPIN 2

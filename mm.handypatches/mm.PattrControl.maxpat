@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 401.0, 145.0, 924.0, 539.0 ],
+		"rect" : [ 124.0, 104.0, 924.0, 539.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -167,8 +167,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.0, 55.0, 163.0, 33.0 ],
-					"text" : "send data to a beap, vizzie or auzie module"
+					"patching_rect" : [ 6.0, 55.0, 265.0, 33.0 ],
+					"text" : "send data to a beap, vizzie or auzie module or any bpatcher with scripted params"
 				}
 
 			}
@@ -301,7 +301,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -693,12 +693,12 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 39.173828, 132.0, 87.5, 22.0 ],
 									"restore" : 									{
-										"Feedback" : [ -11.999999999999996 ],
+										"Feedback" : [ -3.059999999999999 ],
 										"HPF" : [ 20.0 ],
-										"LPF" : [ 20000.0 ],
+										"LPF" : [ 12656.616033232057816 ],
 										"Mix" : [ 50.0 ],
 										"bypass" : [ 0.0 ],
-										"time" : [ 0.0 ]
+										"time" : [ 2.77 ]
 									}
 ,
 									"text" : "autopattr",
@@ -897,7 +897,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
