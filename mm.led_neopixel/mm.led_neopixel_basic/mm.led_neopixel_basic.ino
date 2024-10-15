@@ -6,7 +6,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #ifdef __AVR__
-  #include <avr/power.h>
+#include <avr/power.h>
 #endif
 
 #define NUM_PIXELS 30
@@ -15,12 +15,12 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_PIXELS, PIN_STRIP, NEO_GRB + NEO_KHZ800);
 
 void setup() {
-  #ifdef __AVR__
-    if (F_CPU == 16000000) {
-      clock_prescale_set(clock_div_1);  // Set clock prescaler to 1 if using 16 MHz clock
-    }
-  #endif
-  
+#ifdef __AVR__
+  if (F_CPU == 16000000) {
+    clock_prescale_set(clock_div_1);  // Set clock prescaler to 1 if using 16 MHz clock
+  }
+#endif
+
   Serial.begin(115200);
   strip.begin();
   strip.show();
