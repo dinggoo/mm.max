@@ -10,11 +10,23 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 84.0, 130.0, 718.0, 622.0 ],
+		"rect" : [ 77.0, 130.0, 745.0, 622.0 ],
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
 		"subpatcher_template" : "Untitled1_template",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "bang", "int" ],
+					"patching_rect" : [ 397.464281380176544, 524.107137858867645, 57.0, 22.0 ],
+					"text" : "text code"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-84",
 					"maxclass" : "number",
@@ -295,7 +307,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 79.464284956455231, 528.571423530578613, 246.0, 20.0 ],
+					"patching_rect" : [ 9.82142847776413, 517.85713791847229, 246.0, 20.0 ],
 					"text" : "Upload this code to you arduino"
 				}
 
@@ -307,7 +319,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 79.464284956455231, 563.392851769924164, 817.0, 2272.0 ],
+					"patching_rect" : [ 9.82142847776413, 552.678566157817841, 817.0, 2272.0 ],
 					"text" : "/* \n VERSION may 2025 by Mark Meeuwenoord\n ---- CMD ----\n Control Arduino board functions with the following messages:\n \nmode d      // only digital input\nmode a      // only analog input\nmode b      // both digital and analog\n\nr           // request immediate readout\n\nw d 13 1    // digitalWrite HIGH to pin 13\nw a 6 127   // analogWrite 50% PWM to pin 6\nw s 9 90    // set servo at pin 9 to 90 degrees\n \n */\n\n\n#include <Servo.h>\n\nconst int NUM_SERVOS = 6;\nServo servos[NUM_SERVOS];\nbool servoAttached[NUM_SERVOS];\n\n// Pins\nconst int digitalPins[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};\nconst int analogPins[] = {A0, A1, A2, A3, A4, A5};\n\nint lastDigital[12];\nint lastAnalog[6];\n\nchar readMode = 'b'; // 'd' = digital, 'a' = analog, 'b' = both\n\nunsigned long lastPoll = 0;\nconst unsigned long pollInterval = 50;\n\nvoid setup() {\n  Serial.begin(115200);\n\n  for (int i = 0; i < 12; i++) {\n    pinMode(digitalPins[i], INPUT_PULLUP);\n    lastDigital[i] = digitalRead(digitalPins[i]);\n  }\n\n  for (int i = 0; i < 6; i++) {\n    lastAnalog[i] = analogRead(analogPins[i]);\n    servoAttached[i] = false;\n  }\n}\n\nvoid loop() {\n  if (Serial.available()) {\n    handleSerial();\n  }\n\n  if (millis() - lastPoll >= pollInterval) {\n    lastPoll = millis();\n    checkAndSendChanges();\n  }\n}\n\nvoid checkAndSendChanges() {\n  bool changed = false;\n\n  if (readMode == 'd' || readMode == 'b') {\n    for (int i = 0; i < 12; i++) {\n      int val = digitalRead(digitalPins[i]);\n      if (val != lastDigital[i]) {\n        lastDigital[i] = val;\n        changed = true;\n      }\n    }\n    if (changed) sendDigital();\n  }\n\n  changed = false;\n  if (readMode == 'a' || readMode == 'b') {\n    for (int i = 0; i < 6; i++) {\n      int val = analogRead(analogPins[i]);\n      if (abs(val - lastAnalog[i]) > 4) {\n        lastAnalog[i] = val;\n        changed = true;\n      }\n    }\n    if (changed) sendAnalog();\n  }\n}\n\nvoid sendDigital() {\n  Serial.print(\"d\");\n  for (int i = 0; i < 12; i++) {\n    Serial.print(\" \");\n    Serial.print(lastDigital[i]);\n  }\n  Serial.println();\n}\n\nvoid sendAnalog() {\n  Serial.print(\"a\");\n  for (int i = 0; i < 6; i++) {\n    Serial.print(\" \");\n    Serial.print(lastAnalog[i]);\n  }\n  Serial.println();\n}\n\nvoid handleSerial() {\n  static char buffer[64];\n  static byte idx = 0;\n\n  while (Serial.available()) {\n    char c = Serial.read();\n    if (c == '\\n' || c == '\\r') {\n      buffer[idx] = '\\0';\n      parseCommand(buffer);\n      idx = 0;\n    } else if (idx < sizeof(buffer) - 1) {\n      buffer[idx++] = c;\n    }\n  }\n}\n\nvoid parseCommand(char* cmd) {\n  if (strcmp(cmd, \"r\") == 0) {\n    if (readMode == 'd' || readMode == 'b') sendDigital();\n    if (readMode == 'a' || readMode == 'b') sendAnalog();\n  } else if (strncmp(cmd, \"mode \", 5) == 0) {\n    char m = cmd[5];\n    if (m == 'a' || m == 'd' || m == 'b') {\n      readMode = m;\n      Serial.print(\"mode \");\n      Serial.println(readMode);\n    }\n  } else if (cmd[0] == 'w') {\n    char type;\n    int pin, val;\n    if (sscanf(cmd, \"w %c %d %d\", &type, &pin, &val) == 3) {\n      if (type == 'd') {\n        pinMode(pin, OUTPUT);\n        digitalWrite(pin, val);\n      } else if (type == 'a') {\n        pinMode(pin, OUTPUT);\n        analogWrite(pin, val);\n      } else if (type == 's') {\n        if (pin >= 2 && pin <= 13) {\n          int index = getServoIndex(pin);\n          if (index >= 0) {\n            if (!servoAttached[index]) {\n              servos[index].attach(pin);\n              servoAttached[index] = true;\n            }\n            servos[index].write(val);\n          }\n        }\n      }\n    }\n  }\n}\n\nint getServoIndex(int pin) {\n  // Maps pin numbers to one of 6 servo slots\n  for (int i = 0; i < NUM_SERVOS; i++) {\n    if (!servoAttached[i] || servos[i].attached() && servos[i].read() == pin) {\n      return i;\n    }\n  }\n  return -1; // No available servo slots\n}\n"
 				}
 
