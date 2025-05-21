@@ -11,7 +11,7 @@ const int analogPins[] = {A0, A1, A2, A3, A4, A5};
 int lastDigital[12];
 int lastAnalog[6];
 
-String readMode = "b";  // 'a' = analog, 'd' = digital, 'b' = both, 'none' = no input
+String readMode = "none";  // Default is 'none'. Can be 'a', 'd', 'b'
 
 unsigned long lastPoll = 0;
 unsigned long pollInterval = 50;
