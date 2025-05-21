@@ -11,7 +11,7 @@ const int analogPins[] = {A0, A1, A2, A3, A4, A5};
 int lastDigital[12];
 int lastAnalog[6];
 
-String readMode = "none";  // Default is 'none'. Can be 'a', 'd', 'b'
+String readMode = "b";  // Default is 'b'. Can be 'a', 'd', 'b', 'none'
 
 unsigned long lastPoll = 0;
 unsigned long pollInterval = 50;
@@ -20,7 +20,7 @@ void setup() {
   Serial.begin(115200);
 
   for (int i = 0; i < 12; i++) {
-    pinMode(digitalPins[i], INPUT_PULLUP);
+    pinMode(digitalPins[i], INPUT); // Change to INPUT_PULLUP if you dont want to use resitors everywhere
     lastDigital[i] = digitalRead(digitalPins[i]);
   }
 
