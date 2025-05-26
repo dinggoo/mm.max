@@ -1,3 +1,9 @@
+/* 
+ VERSION may 2025 by Mark Meeuwenoord
+ ---- CMD ----
+ */
+
+
 #include <Servo.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -18,7 +24,7 @@ String commMode = "serial"; // "serial", "osc", or "both"
 
 const int OSC_RECEIVE_PORT = 8000;
 const int OSC_SEND_PORT = 9000;
-const char* OSC_DEST_IP = "192.168.178.126"; // Default destination IP
+const char* OSC_DEST_IP = "192.168.178.126"; // Change destination IP  (your receiving computer's ip adres)
 
 WiFiUDP udpReceive;
 WiFiUDP udpSend;

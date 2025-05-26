@@ -10,11 +10,59 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2102.0, 111.0, 1172.0, 901.0 ],
+		"rect" : [ 2141.0, 106.0, 1172.0, 901.0 ],
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
 		"subpatcher_template" : "Untitled",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 214.0, 711.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-101",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1059.0, 430.0, 44.0, 22.0 ],
+					"text" : "poll 50"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-100",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 329.0, 711.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-98",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 13,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 214.0, 663.0, 145.0, 22.0 ],
+					"text" : "unjoin 12"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 48.0,
 					"id" : "obj-97",
@@ -288,7 +336,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 423.0, 279.0, 77.0, 22.0 ],
+					"patching_rect" : [ 428.0, 279.0, 77.0, 22.0 ],
 					"presentation_linecount" : 2,
 					"text" : "/comm serial"
 				}
@@ -340,7 +388,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 584.0, 830.0, 245.0, 22.0 ],
-					"text" : "0 0 1 1 1 1 1 1 1 1 1 0"
+					"text" : "1 1 1 1 1 1 0 1 1 1 0 0"
 				}
 
 			}
@@ -376,7 +424,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 834.0, 224.0, 56.0, 22.0 ],
-					"text" : "metro 25"
+					"text" : "metro 80"
 				}
 
 			}
@@ -575,9 +623,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 187.0, 489.0, 179.0, 22.0 ],
-					"presentation_linecount" : 2,
-					"text" : "/digital 0 0 1 1 1 1 1 1 1 1 1 0"
+					"patching_rect" : [ 187.0, 489.0, 224.0, 22.0 ],
+					"presentation_linecount" : 3,
+					"text" : "/analog 303 313 318 323 327 329"
 				}
 
 			}
@@ -588,8 +636,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 59.0, 624.0, 125.0, 22.0 ],
-					"text" : "0 64 107 141 168 178"
+					"patching_rect" : [ 11.0, 624.0, 173.0, 22.0 ],
+					"text" : "346 342 340 337 333 335"
 				}
 
 			}
@@ -636,7 +684,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 573.0, 788.0, 238.0, 22.0 ],
-					"text" : "0 62 104 137 162 174"
+					"presentation_linecount" : 2,
+					"text" : "388 389 390 390 389 392"
 				}
 
 			}
@@ -826,8 +875,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 198.0, 624.0, 205.0, 22.0 ],
-					"text" : "0 0 1 1 1 1 1 1 1 1 1 0"
+					"patching_rect" : [ 238.5, 624.0, 205.0, 22.0 ],
+					"text" : "1 1 0 1 1 1 1 1 1 1 1 0"
 				}
 
 			}
@@ -857,6 +906,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-101", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-15", 1 ]
 				}
@@ -865,15 +921,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-35", 0 ],
-					"order" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-40", 1 ],
-					"order" : 0,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -989,6 +1036,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 1 ],
+					"order" : 0,
+					"source" : [ "obj-35", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-98", 0 ],
+					"order" : 1,
 					"source" : [ "obj-35", 1 ]
 				}
 
@@ -1238,20 +1294,21 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-100", 0 ],
+					"source" : [ "obj-98", 11 ]
 				}
 
 			}
-,
-			"inherited_shortname" : 1
-		}
-,
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-98", 0 ]
+				}
+
+			}
+ ],
 		"dependency_cache" : [ 			{
 				"name" : "thru.maxpat",
 				"bootpath" : "C74:/patchers/m4l/Pluggo for Live resources/patches",

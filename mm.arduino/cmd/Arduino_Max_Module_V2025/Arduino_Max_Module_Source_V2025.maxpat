@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 579.0, 404.0, 641.0, 304.0 ],
+		"rect" : [ 2416.0, 230.0, 779.0, 509.0 ],
 		"openinpresentation" : 1,
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
@@ -891,7 +891,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 517.0, 233.0, 430.0, 422.0 ],
+						"rect" : [ 2541.0, 331.0, 528.0, 448.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1108,7 +1108,7 @@
 										"toolbaradditions" : [ "BEAP", "Vizzie" ]
 									}
 ,
-									"patching_rect" : [ 91.0, 286.0, 61.0, 22.0 ],
+									"patching_rect" : [ 91.0, 263.0, 61.0, 22.0 ],
 									"text" : "p fromArd"
 								}
 
@@ -2292,8 +2292,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "" ],
-									"patching_rect" : [ 91.0, 209.5, 315.0, 29.0 ],
-									"text" : "serial # 115200 @autoopen 0 @dtr 1"
+									"patching_rect" : [ 91.0, 209.5, 296.0, 29.0 ],
+									"text" : "serial # 9600 @autoopen 0 @dtr 1"
 								}
 
 							}
@@ -2344,7 +2344,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 91.0, 331.5, 30.0, 30.0 ]
+									"patching_rect" : [ 91.0, 302.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2356,7 +2356,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 306.0, 331.5, 30.0, 30.0 ]
+									"patching_rect" : [ 316.0, 314.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2490,7 +2490,7 @@
 
 							}
  ],
-						"toolbaradditions" : [ "BEAP", "Vizzie" ]
+						"toolbaradditions" : [ "BEAP", "Vizzie", "TS.Modular" ]
 					}
 ,
 					"patching_rect" : [ 53.0, 583.49310302734375, 131.0, 22.0 ],
