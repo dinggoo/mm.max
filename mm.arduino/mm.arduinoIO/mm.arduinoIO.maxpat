@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2306.0, 185.0, 745.0, 622.0 ],
+		"rect" : [ 271.0, 229.0, 849.0, 680.0 ],
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
 		"subpatcher_template" : "Untitled1_template",
@@ -22,7 +22,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 391.964281976222992, 26.0, 69.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "mode none"
 				}
 
@@ -158,13 +157,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-72",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 469.642852663993835, 458.035709917545319, 66.96428507566452, 35.0 ],
-					"text" : "mode none"
+					"patching_rect" : [ 470.0, 458.035709917545319, 210.0, 62.0 ],
+					"text" : "................................................................................................................................................................Connected to WiFi. IP address:"
 				}
 
 			}
@@ -176,7 +175,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 129.464284479618073, 458.035709917545319, 159.0, 22.0 ],
-					"text" : "1023 1004 987 972 952 941"
+					"text" : "308 313 318 323 328 328"
 				}
 
 			}
@@ -187,7 +186,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 83.928570628166199, 389.285710573196411, 56.0, 22.0 ],
+					"patching_rect" : [ 83.928570628166199, 383.0, 56.0, 22.0 ],
 					"text" : "route a d"
 				}
 
@@ -245,7 +244,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 151.785712838172913, 355.357139468193054, 124.107141673564911, 20.0 ],
+					"patching_rect" : [ 155.357141375541687, 346.0, 124.107141673564911, 20.0 ],
 					"text" : "read from arduino "
 				}
 
@@ -373,8 +372,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 391.964281976222992, 99.10714191198349, 49.0, 22.0 ],
-					"text" : "mode d"
+					"patching_rect" : [ 391.964281976222992, 99.10714191198349, 52.0, 22.0 ],
+					"text" : "/mode d"
 				}
 
 			}
@@ -432,7 +431,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 131.0, 357.0, 330.0 ],
+						"rect" : [ 3209.0, 200.0, 357.0, 330.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"subpatcher_template" : "Untitled1_template",
 						"boxes" : [ 							{
@@ -489,7 +488,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 50.0, 100.0, 69.0, 22.0 ],
+									"patching_rect" : [ 50.0, 83.0, 69.0, 22.0 ],
 									"text" : "route 13 10"
 								}
 
@@ -563,10 +562,10 @@
 
 							}
  ],
-						"toolbaradditions" : [ "BEAP", "Vizzie" ]
+						"toolbaradditions" : [ "BEAP", "Vizzie", "TS.Modular" ]
 					}
 ,
-					"patching_rect" : [ 83.928570628166199, 354.464282333850861, 61.0, 22.0 ],
+					"patching_rect" : [ 83.928570628166199, 345.0, 61.0, 22.0 ],
 					"text" : "p fromArd"
 				}
 
@@ -719,7 +718,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 295.535711467266083, 458.035709917545319, 158.928569912910461, 22.0 ],
-					"text" : "1 1 1 1 0 1 1 1 1 1 1 0"
+					"text" : "0 1 1 1 1 1 1 0 1 1 1 0"
 				}
 
 			}
