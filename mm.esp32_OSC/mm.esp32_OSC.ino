@@ -149,9 +149,7 @@ void handleOSC(OSCMessage& msg) {
 }
 
 void handleWrite(OSCMessage& msg, int addrOffset) {
-  char typeBuf[2];
-  msg.getString(0, typeBuf, 2);
-  char type = typeBuf[0];
+  char type = msg.getString(0)[0]; // Get first character directly
   int pin = msg.getInt(1);
   int val = msg.getInt(2);
   
@@ -198,9 +196,7 @@ void handleWrite(OSCMessage& msg, int addrOffset) {
 }
 
 void handleReadMode(OSCMessage& msg, int addrOffset) {
-  char modeBuf[2];
-  msg.getString(0, modeBuf, 2);
-  char mode = modeBuf[0];
+  char mode = msg.getString(0)[0]; // Get first character directly
   
   debugPrint("Read mode changed to: ");
   debugPrintln(String(mode));

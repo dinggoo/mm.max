@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 271.0, 229.0, 849.0, 680.0 ],
+		"rect" : [ 3896.0, 205.0, 849.0, 680.0 ],
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
 		"subpatcher_template" : "Untitled1_template",
@@ -825,8 +825,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 83.928570628166199, 311.607139885425568, 129.0, 22.0 ],
-					"text" : "serial e 115200 @dtr 1"
+					"patching_rect" : [ 83.928570628166199, 311.607139885425568, 117.0, 22.0 ],
+					"text" : "serial e 9600 @dtr 1"
 				}
 
 			}
