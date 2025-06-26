@@ -10,12 +10,20 @@ Edits by Mark Meeuwenoord 2024
 #include <Adafruit_DotStar.h>
 #include <SPI.h>  // COMMENT OUT THIS LINE FOR GEMMA OR TRINKET
 
+<<<<<<< HEAD
 #define NUMPIXELS 20  // Number of LEDs in strip
+=======
+#define NUMPIXELS 8  // Number of LEDs in strip
+>>>>>>> ed6937bfb3c5d55f578c11bc97f1c31664bbe09e
 
 // Here's how to control the LEDs from any two pins:
 #define DATAPIN 2
 #define CLOCKPIN 3
+<<<<<<< HEAD
 Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_RGB);
+=======
+Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BRG);
+>>>>>>> ed6937bfb3c5d55f578c11bc97f1c31664bbe09e
 
 void setup() {
   Serial.begin(9600);
