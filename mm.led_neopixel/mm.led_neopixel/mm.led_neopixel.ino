@@ -1,6 +1,9 @@
+/* 
+ VERSION may 2025 by Mark Meeuwenoord
+*/
+
 #include <Adafruit_NeoPixel.h>
 
-<<<<<<< HEAD
 // Configuration
 #define MAX_STRIPS 4
 #define MAX_PIXELS_PER_STRIP 100
@@ -26,7 +29,7 @@ StripConfig strips[MAX_STRIPS] = {
   {5, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false}   // Strip 3: Pin 5, 30 pixels
 };
 
-int numActiveStrips = 1; // Change this to match how many strips you're using
+int numActiveStrips = 2; // Change this to match how many strips you're using
 
 // Predefined colors
 struct ColorEntry {
@@ -298,40 +301,3 @@ void setStripToColor(int stripIndex, uint32_t color) {
   }
   strips[stripIndex].strip->show();
 }
-=======
-#define NUM_PIXELS 30
-#define PIN_STRIP 2
-#define ANALOG_PIN A0  // Define the analog pin to read the sensor
-
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_PIXELS, PIN_STRIP, NEO_GRB + NEO_KHZ800);
-
-void setup() {
-  Serial.begin(115200);
-  strip.begin();
-  strip.show();
-  pinMode(ANALOG_PIN, INPUT);  // Initialize the analog pin as an input
-}
-
-void loop() {
-  // Read the analog sensor value
-  int sensorValue = analogRead(ANALOG_PIN);
-  //Serial.print("Sensor Value: ");
-  Serial.println(sensorValue);
-
-  // Check if there is enough serial data available
-  if (Serial.available() >= 12) { // Ensure there are enough bytes for three integers (RGB) and the newline character
-    int r = Serial.parseInt();
-    int g = Serial.parseInt();
-    int b = Serial.parseInt();
-    
-    if (Serial.read() == '\n') {  // Ensure the command ends with a newline character
-      for (int i = 0; i < NUM_PIXELS; i++) {
-        strip.setPixelColor(i, strip.Color(r, g, b));
-      }
-      strip.show();
-    }
-  }
-  
-  delay(20);  // Add a small delay to avoid flooding the serial output
-}
->>>>>>> ed6937bfb3c5d55f578c11bc97f1c31664bbe09e
