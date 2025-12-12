@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 85.0, 87.0, 1161.0, 679.0 ],
+		"rect" : [ 85.0, 87.0, 917.0, 679.0 ],
 		"bglocked" : 1,
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 15.0 ],
@@ -302,7 +302,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 42.857142448425293, 131.168829917907715, 171.428569793701172, 22.0 ],
-					"text" : "rgb 0 0 0 0"
+					"text" : "color 0 red"
 				}
 
 			}

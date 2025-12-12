@@ -1,4 +1,5 @@
 #include <Adafruit_DotStar.h>
+#include <SPI.h>
 
 // Configuration
 #define MAX_STRIPS 4
@@ -20,7 +21,7 @@ struct StripConfig {
 
 // Initialize your strips here - each strip needs DATA and CLOCK pins
 StripConfig strips[MAX_STRIPS] = {
-  {2, 3, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 0: Data pin 2, Clock pin 3, 30 pixels
+  {2, 3, 100, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 0: Data pin 2, Clock pin 3, 30 pixels
   {4, 5, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 1: Data pin 4, Clock pin 5, 30 pixels
   {6, 7, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 2: Data pin 6, Clock pin 7, 30 pixels
   {8, 9, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false}   // Strip 3: Data pin 8, Clock pin 9, 30 pixels

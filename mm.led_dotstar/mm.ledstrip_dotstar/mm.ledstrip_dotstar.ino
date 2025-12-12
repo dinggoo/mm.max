@@ -11,7 +11,7 @@ Edits by Mark Meeuwenoord 2024
 #include <SPI.h>  // COMMENT OUT THIS LINE FOR GEMMA OR TRINKET
 
 <<<<<<< HEAD
-#define NUMPIXELS 20  // Number of LEDs in strip
+#define NUMPIXELS 150  // Number of LEDs in strip
 =======
 #define NUMPIXELS 8  // Number of LEDs in strip
 >>>>>>> ed6937bfb3c5d55f578c11bc97f1c31664bbe09e
