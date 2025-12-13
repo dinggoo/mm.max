@@ -1,0 +1,23 @@
+{
+  "name": "fireball-api-max",
+  "version": "1.0.0",
+  "description": "NASA Fireball API integration for Max/MSP using node.script",
+  "main": "fireball-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "max",
+    "msp",
+    "nasa",
+    "fireball",
+    "meteor",
+    "api",
+    "node.script"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "max-api": "^1.5.4"
+  }
+}
