@@ -3038,7 +3038,7 @@
                                     "bgfillcolor_proportion": 0.5,
                                     "bgfillcolor_type": "gradient",
                                     "id": "obj-3",
-                                    "items": [ "debug-console", ",", "wlan-debug", ",", "dinggoo", ",", "Bluetooth-Incoming-Port", ",", "usbmodem1101" ],
+                                    "items": [ "no", "arduino", "connected", ",", "debug-console", ",", "wlan-debug", ",", "dinggoo", ",", "Bluetooth-Incoming-Port" ],
                                     "maxclass": "umenu",
                                     "numinlets": 1,
                                     "numoutlets": 3,
@@ -8640,14 +8640,6 @@
             "obj-1::obj-59": [ "servo[4]", "servo", 0 ],
             "obj-1::obj-61": [ "write[5]", "write", 0 ],
             "obj-1::obj-88": [ "live.text", "live.text", 0 ],
-            "parameterbanks": {
-                "0": {
-                    "index": 0,
-                    "name": "",
-                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
-                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-                }
-            },
             "inherited_shortname": 1
         },
         "autosave": 0,

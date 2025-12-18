@@ -9,98 +9,421 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 105.0, 87.0, 1089.0, 679.0 ],
+        "rect": [ 46.0, 87.0, 1080.0, 679.0 ],
         "gridonopen": 2,
         "subpatcher_template": "Untitled1_template",
         "boxes": [
             {
                 "box": {
-                    "id": "obj-87",
-                    "linecount": 2,
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 883.2000131607056, 210.40000313520432, 95.20000141859055, 35.0 ],
-                    "text": "date 2025-10-45"
+                    "id": "obj-86",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 1301.5, 633.0, 150.0, 47.0 ],
+                    "presentation_linecount": 3,
+                    "text": "dict with the data. All dicts with this name will have the same data in it."
                 }
             },
             {
                 "box": {
                     "id": "obj-85",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 883.2000131607056, 161.60000240802765, 49.0, 22.0 ],
-                    "text": "date $1"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-82",
                     "maxclass": "button",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 853.6000127196312, 95.00000143051147, 24.0, 24.0 ]
+                    "patching_rect": [ 1209.0, 612.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-83",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 1209.0, 652.0, 87.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict fireballDict"
+                }
+            },
+            {
+                "box": {
+                    "code": "{\n    \"count\": \"10\",\n    \"fireball_0\": {\n        \"date\": \"2025-12-16 20:58:12\",\n        \"latitude\": -24.1,\n        \"longitude\": -92.4,\n        \"altitude\": 25,\n        \"energy\": 9.6,\n        \"energy_joules\": 96000000000,\n        \"impact_energy\": 0.29\n    },\n    \"fireball_1\": {\n        \"date\": \"2025-11-15 00:48:43\",\n        \"latitude\": -62.2,\n        \"longitude\": -94.7,\n        \"altitude\": 30,\n        \"energy\": 10.5,\n        \"energy_joules\": 105000000000,\n        \"impact_energy\": 0.32\n    },\n    \"fireball_2\": {\n        \"date\": \"2025-11-11 17:39:51\",\n        \"latitude\": 27.3,\n        \"longitude\": -79.8,\n        \"altitude\": 42,\n        \"energy\": 9.3,\n        \"energy_joules\": 93000000000,\n        \"impact_energy\": 0.28\n    },\n    \"fireball_3\": {\n        \"date\": \"2025-10-20 13:31:27\",\n        \"latitude\": 5.7,\n        \"longitude\": -135.2,\n        \"altitude\": 41,\n        \"energy\": 2,\n        \"energy_joules\": 20000000000,\n        \"impact_energy\": 0.073\n    },\n    \"fireball_4\": {\n        \"date\": \"2025-09-13 22:24:59\",\n        \"latitude\": -38.1,\n        \"longitude\": -64.8,\n        \"altitude\": 25.1,\n        \"energy\": 16.7,\n        \"energy_joules\": 167000000000,\n        \"impact_energy\": 0.48\n    },\n    \"fireball_5\": {\n        \"date\": \"2025-09-10 11:00:57\",\n        \"latitude\": -14.8,\n        \"longitude\": -142.4,\n        \"altitude\": 37,\n        \"energy\": 2.8,\n        \"energy_joules\": 28000000000,\n        \"impact_energy\": 0.098\n    },\n    \"fireball_6\": {\n        \"date\": \"2025-09-09 17:49:10\",\n        \"latitude\": -2.3,\n        \"longitude\": -39.5,\n        \"altitude\": 24,\n        \"energy\": 15.3,\n        \"energy_joules\": 153000000000,\n        \"impact_energy\": 0.44\n    },\n    \"fireball_7\": {\n        \"date\": \"2025-09-08 10:09:15\",\n        \"latitude\": 26.4,\n        \"longitude\": 42.2,\n        \"altitude\": 28.4,\n        \"energy\": 3.6,\n        \"energy_joules\": 36000000000,\n        \"impact_energy\": 0.12\n    },\n    \"fireball_8\": {\n        \"date\": \"2025-08-19 14:08:48\",\n        \"latitude\": 30.9,\n        \"longitude\": 131.8,\n        \"altitude\": 27.5,\n        \"energy\": 65.8,\n        \"energy_joules\": 658000000000,\n        \"impact_energy\": 1.6\n    },\n    \"fireball_9\": {\n        \"date\": \"2025-08-12 04:09:48\",\n        \"latitude\": -58.5,\n        \"longitude\": -22.3,\n        \"altitude\": 60,\n        \"energy\": 4.4,\n        \"energy_joules\": 44000000000,\n        \"impact_energy\": 0.15\n    }\n}",
+                    "fontface": 0,
+                    "fontname": "<Monospaced>",
+                    "fontsize": 12.0,
+                    "id": "obj-82",
+                    "maxclass": "dict.codebox",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 1209.0, 689.0, 335.0, 266.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    }
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-81",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 888.0, 702.0, 150.0, 47.0 ],
+                    "presentation_linecount": 3,
+                    "text": "dict with the data. All dicts with this name will have the same data in it."
                 }
             },
             {
                 "box": {
                     "id": "obj-80",
-                    "maxclass": "number",
+                    "maxclass": "comment",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
+                    "numoutlets": 0,
+                    "patching_rect": [ 1112.0, 307.0, 150.0, 20.0 ],
+                    "text": "dict with the data"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-77",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 811.0, 118.0, 150.0, 20.0 ],
+                    "text": "Latest 10 fireballs"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-72",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 1018.6000004708767, 124.0, 150.0, 33.0 ],
+                    "text": "here we can check if there is a fireball today"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 16.0,
+                    "id": "obj-67",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 745.0, 518.0, 384.0, 60.0 ],
+                    "presentation_linecount": 4,
+                    "text": "PARSE DATA FROM A DICTIONARY (here we use a dict with the name <fireballDict>  which is made by the node.js script above."
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-64",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 723.0, 140.0, 86.0, 33.0 ],
+                    "text": "Start script first"
+                }
+            },
+            {
+                "box": {
+                    "bubble": 1,
+                    "bubble_bgcolor": [ 0.9647058823529412, 0.1607843137254902, 0.1607843137254902, 1.0 ],
+                    "bubbleside": 3,
+                    "id": "obj-61",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 664.0, 284.5, 125.0, 37.0 ],
+                    "text": "double click to see the node script"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 16.0,
+                    "id": "obj-55",
+                    "linecount": 4,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 732.0, 17.0, 547.0, 78.0 ],
+                    "presentation_linecount": 8,
+                    "text": "Node.js  METHOD API 2 (fireball data)\nHere we call the API and parse it out into Max readable messages (a list).\nNext to that we also write the data to a dictionary with the name <fireballDict> "
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-54",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 207.0, 812.0, 150.0, 33.0 ],
+                    "text": "Data from the API readable in Max as a list"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 16.0,
+                    "id": "obj-52",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 322.0, 34.0, 241.0, 24.0 ],
+                    "text": "MAXURL METHOD API 2 "
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-51",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 319.0, 62.0, 247.0, 20.0 ],
+                    "presentation_linecount": 2,
+                    "text": "https://ssd-api.jpl.nasa.gov/doc/fireball.html"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-50",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 32.0, 62.0, 225.0, 20.0 ],
+                    "text": "https://ssd-api.jpl.nasa.gov/doc/cad.html"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 16.0,
+                    "id": "obj-43",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 36.0, 34.0, 241.0, 24.0 ],
+                    "text": "MAXURL METHOD API 1 "
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 16.0,
+                    "id": "obj-40",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 40.0, 507.0, 281.0, 24.0 ],
+                    "text": "PARSE DATA FROM A DICTIONARY"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-23",
+                    "maxclass": "button",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 989.6000147461891, 96.00000143051147, 50.0, 22.0 ]
+                    "patching_rect": [ 433.0, 129.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-20",
+                    "maxclass": "button",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 142.0, 129.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-19",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 352.0, 273.0, 67.0, 22.0 ],
+                    "text": "clear, bang"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-15",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 80.0, 279.0, 67.0, 22.0 ],
+                    "text": "clear, bang"
                 }
             },
             {
                 "box": {
                     "id": "obj-79",
-                    "maxclass": "number",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 937.6000139713287, 96.00000143051147, 50.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-75",
-                    "maxclass": "number",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 883.2000131607056, 96.00000143051147, 50.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 11.595187,
-                    "id": "obj-72",
-                    "maxclass": "newobj",
-                    "numinlets": 3,
+                    "maxclass": "message",
+                    "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 883.2000131607056, 128.80000191926956, 111.20000165700912, 21.0 ],
-                    "text": "sprintf %i-%i-%i"
+                    "patching_rect": [ 971.0, 257.0, 49.0, 22.0 ],
+                    "text": "date $1"
                 }
             },
             {
                 "box": {
-                    "id": "obj-71",
+                    "id": "obj-74",
                     "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 0,
-                    "patching_rect": [ 595.2000088691711, 102.4000015258789, 41.0, 22.0 ],
-                    "text": "sprintf"
+                    "numinlets": 1,
+                    "numoutlets": 5,
+                    "outlettype": [ "", "", "", "", "" ],
+                    "patching_rect": [ 971.0, 223.0, 135.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacyoutputorder": 0
+                    },
+                    "text": "regexp \" \" @substitute -"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-56",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 971.0, 188.0, 109.0, 22.0 ],
+                    "text": "list.indexmap 2 0 1"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-48",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 971.0, 124.0, 32.0, 22.0 ],
+                    "text": "date"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-39",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "list", "list", "int" ],
+                    "patching_rect": [ 971.0, 156.0, 40.0, 22.0 ],
+                    "text": "date"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-38",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 1018.6000004708767, 306.0, 87.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict fireballDict"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-35",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 813.0, 938.0, 113.0, 22.0 ],
+                    "text": "-62.2"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-34",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 907.0, 887.0, 66.0, 22.0 ],
+                    "text": "string.tolist"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-27",
+                    "linecount": 2,
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 779.0, 891.0, 113.0, 35.0 ],
+                    "text": "2025-11-15 00:48:43"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-26",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 875.0, 824.0, 66.0, 22.0 ],
+                    "text": "string.tolist"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-17",
+                    "maxclass": "number",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 789.0, 603.0, 50.0, 22.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-3",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 789.0, 640.0, 100.0, 22.0 ],
+                    "text": "sprintf fireball_%i"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-1",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 789.0, 675.0, 73.0, 22.0 ],
+                    "text": "prepend get"
                 }
             },
             {
@@ -110,7 +433,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 708.7000096440315, 704.0000104904175, 97.60000145435333, 22.0 ],
+                    "patching_rect": [ 765.0, 837.0, 97.60000145435333, 22.0 ],
                     "text": "9.3"
                 }
             },
@@ -121,35 +444,23 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 751.3000110983849, 545.6000081300735, 55.0, 22.0 ],
+                    "patching_rect": [ 808.0, 743.0, 55.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
             {
                 "box": {
                     "id": "obj-65",
-                    "linecount": 7,
+                    "linecount": 2,
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 10,
                     "outlettype": [ "", "", "", "", "", "", "", "", "", "" ],
-                    "patching_rect": [ 787.2000117301941, 578.0000143051147, 109.60000163316727, 102.0 ],
+                    "patching_rect": [ 844.0, 771.0, 302.0, 35.0 ],
                     "saved_object_attributes": {
                         "legacy": 0
                     },
                     "text": "dict.unpack fireball: date: latitude: longitude: location: altitude: energy: energy_joules: impact_energy:"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-64",
-                    "linecount": 2,
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 984.1555638048385, 456.80000680685043, 119.20000177621841, 35.0 ],
-                    "text": "fireball_1 dictionary u056008419"
                 }
             },
             {
@@ -159,7 +470,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 734.3000110983849, 478.4000071287155, 77.0, 22.0 ],
+                    "patching_rect": [ 706.0, 603.0, 77.0, 22.0 ],
                     "text": "get fireball_1"
                 }
             },
@@ -170,8 +481,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 1040.1555646393035, 344.00000512599945, 63.20000094175339, 22.0 ],
-                    "text": "0.11"
+                    "patching_rect": [ 1164.0, 407.0, 63.20000094175339, 22.0 ],
+                    "text": "0.15"
                 }
             },
             {
@@ -286,7 +597,7 @@
                         ],
                         "toolbaradditions": [ "BEAP", "Vizzie", "Vsynth" ]
                     },
-                    "patching_rect": [ 792.8000118136406, 249.60000371932983, 57.0, 22.0 ],
+                    "patching_rect": [ 917.0, 313.0, 57.0, 22.0 ],
                     "text": "p active?"
                 }
             },
@@ -299,7 +610,7 @@
                     "oncolor": [ 0.0, 0.9768045545, 0.0, 1.0 ],
                     "outlettype": [ "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 792.8000118136406, 274.40000408887863, 27.200000405311584, 27.200000405311584 ],
+                    "patching_rect": [ 917.0, 338.0, 27.200000405311584, 27.200000405311584 ],
                     "style": "Audiomix"
                 }
             },
@@ -310,7 +621,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 734.3000110983849, 508.8000075817108, 87.0, 22.0 ],
+                    "patching_rect": [ 791.0, 707.0, 87.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -326,8 +637,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 937.6000139713287, 344.00000512599945, 63.20000094175339, 22.0 ],
-                    "text": "3.2"
+                    "patching_rect": [ 1062.0, 407.0, 63.20000094175339, 22.0 ],
+                    "text": "4.4"
                 }
             },
             {
@@ -337,7 +648,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 673.6000100374222, 106.40000158548355, 96.0, 22.0 ],
+                    "patching_rect": [ 815.0, 196.0, 96.0, 22.0 ],
                     "text": "date 2025-11-15"
                 }
             },
@@ -348,8 +659,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 614.4000091552734, 344.00000512599945, 128.80000191926956, 22.0 ],
-                    "text": "\"2025-07-11 01:48:33\""
+                    "patching_rect": [ 739.0, 407.0, 128.80000191926956, 22.0 ],
+                    "text": "\"2025-08-12 04:09:48\""
                 }
             },
             {
@@ -359,7 +670,7 @@
                     "numinlets": 10,
                     "numoutlets": 10,
                     "outlettype": [ "", "", "", "", "", "", "", "", "", "" ],
-                    "patching_rect": [ 672.8000100255013, 311.20000463724136, 482.0, 22.0 ],
+                    "patching_rect": [ 797.0, 374.0, 482.0, 22.0 ],
                     "text": "route fireball date latitude longitude location altitude energy energy_joules impact_energy"
                 }
             },
@@ -370,19 +681,20 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 74.40000110864639, 652.0000097155571, 41.0, 22.0 ],
-                    "text": "NASA"
+                    "patching_rect": [ 34.0, 547.0, 67.0, 22.0 ],
+                    "text": "NASA_cad"
                 }
             },
             {
                 "box": {
                     "id": "obj-32",
+                    "linecount": 4,
                     "maxclass": "message",
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 108.00000160932541, 936.8000139594078, 646.4000096321106, 22.0 ],
-                    "text": "2013-04-30 08:40:37 511 9.8 35.5 N 30.7 W 21.2 12.1"
+                    "patching_rect": [ 99.0, 797.0, 101.0, 62.0 ],
+                    "text": "2025-02-22 10:26:08 5.5 0.18 28.1 N 120. E 46.7 15."
                 }
             },
             {
@@ -392,21 +704,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 221.04879069328308, 848.8000126481056, 66.0, 22.0 ],
+                    "patching_rect": [ 181.0, 763.0, 66.0, 22.0 ],
                     "text": "string.tolist"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-30",
-                    "linecount": 3,
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 297.60000443458557, 816.8000121712685, 135.200002014637, 49.0 ],
-                    "presentation_linecount": 8,
-                    "text": "\"2013-04-30 08:40:37\" \"511\" \"9.8\" \"35.5\" N \"30.7\" W \"21.2\" \"12.1\""
                 }
             },
             {
@@ -416,7 +715,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 221.04879069328308, 816.8000121712685, 63.0, 22.0 ],
+                    "patching_rect": [ 181.0, 730.0, 63.0, 22.0 ],
                     "text": "array.tolist"
                 }
             },
@@ -428,7 +727,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 306.7398473421732, 644.0000095963478, 50.0, 22.0 ]
+                    "patching_rect": [ 266.0, 554.0, 50.0, 22.0 ]
                 }
             },
             {
@@ -438,7 +737,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 721.6000107526779, 172.80000257492065, 54.0, 22.0 ],
+                    "patching_rect": [ 798.0, 140.0, 54.0, 22.0 ],
                     "text": "latest 10"
                 }
             },
@@ -449,7 +748,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 600.0000089406967, 185.60000276565552, 65.0, 22.0 ],
+                    "patching_rect": [ 724.0, 204.0, 65.0, 22.0 ],
                     "text": "script stop"
                 }
             },
@@ -460,7 +759,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 599.2000089287758, 161.60000240802765, 66.0, 22.0 ],
+                    "patching_rect": [ 723.0, 180.0, 66.0, 22.0 ],
                     "text": "script start"
                 }
             },
@@ -471,7 +770,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 673.6000100374222, 228.80000340938568, 138.0, 22.0 ],
+                    "patching_rect": [ 798.0, 292.0, 138.0, 22.0 ],
                     "saved_object_attributes": {
                         "autostart": 0,
                         "defer": 0,
@@ -495,19 +794,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 353.65854501724243, 236.5853714942932, 91.0, 22.0 ],
+                    "patching_rect": [ 320.0, 130.0, 91.0, 22.0 ],
                     "text": "set url $1, bang"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-5",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 352.43903279304504, 386.4000057578087, 61.0, 22.0 ],
-                    "text": "get body::"
                 }
             },
             {
@@ -518,7 +806,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 313.41464161872864, 417.0731806755066, 24.0, 24.0 ]
+                    "patching_rect": [ 320.0, 272.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -528,8 +816,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 401.21952176094055, 317.0731782913208, 141.0, 22.0 ],
-                    "text": "progress 0. 74563. 0. 0."
+                    "patching_rect": [ 369.0, 204.0, 141.0, 22.0 ],
+                    "text": "progress 0. 74636. 0. 0."
                 }
             },
             {
@@ -539,7 +827,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "bang", "" ],
-                    "patching_rect": [ 352.43903279304504, 350.4000052213669, 189.10660907626152, 22.0 ],
+                    "patching_rect": [ 320.0, 237.0, 189.10660907626152, 22.0 ],
                     "text": "t b l"
                 }
             },
@@ -549,7 +837,7 @@
                     "maxclass": "dict.view",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 352.43903279304504, 489.02440190315247, 221.95122480392456, 110.97561240196228 ]
+                    "patching_rect": [ 320.0, 374.0, 209.43903279304504, 72.0 ]
                 }
             },
             {
@@ -560,9 +848,10 @@
                                 "source": "NASA/JPL Fireball Data API",
                                 "version": "1.2"
                             },
-                            "count": "1048",
+                            "count": "1049",
                             "fields": [ "date", "energy", "impact-e", "lat", "lat-dir", "lon", "lon-dir", "alt", "vel" ],
                             "data": [
+                                [ "2025-12-16 20:58:12", "9.6", "0.29", "24.1", "S", "92.4", "W", "25.0", "19.0" ],
                                 [ "2025-11-15 00:48:43", "10.5", "0.32", "62.2", "S", "94.7", "W", "30.0", "16.0" ],
                                 [ "2025-11-11 17:39:51", "9.3", "0.28", "27.3", "N", "79.8", "W", "42.0", "18.7" ],
                                 [ "2025-10-20 13:31:27", "2.0", "0.073", "5.7", "N", "135.2", "W", "41.0", "26.7" ],
@@ -1613,14 +1902,14 @@
                                 [ "1988-04-15 03:03:10", "758", "14", "4.1", "S", "124.3", "E", null, null ]
                             ]
                         },
-                        "header": "HTTP/1.1 200 OK\r\nDate: Fri, 12 Dec 2025 16:27:21 GMT\r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nServer: nginx\r\nX-Robots-Tag: noindex, nofollow, noarchive\r\nSet-Cookie: AWSALBAPP-0=_remove_; Expires=Fri, 19 Dec 2025 16:27:21 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-1=_remove_; Expires=Fri, 19 Dec 2025 16:27:21 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-2=_remove_; Expires=Fri, 19 Dec 2025 16:27:21 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-3=_remove_; Expires=Fri, 19 Dec 2025 16:27:21 GMT; Path=/\r\n\r\n",
+                        "header": "HTTP/1.1 200 OK\r\nDate: Thu, 18 Dec 2025 10:17:15 GMT\r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nServer: nginx\r\nX-Robots-Tag: noindex, nofollow, noarchive\r\nSet-Cookie: AWSALBAPP-0=_remove_; Expires=Thu, 25 Dec 2025 10:17:15 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-1=_remove_; Expires=Thu, 25 Dec 2025 10:17:15 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-2=_remove_; Expires=Thu, 25 Dec 2025 10:17:15 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-3=_remove_; Expires=Thu, 25 Dec 2025 10:17:15 GMT; Path=/\r\n\r\n",
                         "status": 200,
                         "connect_code": 0,
                         "url": "https://ssd-api.jpl.nasa.gov/fireball.api",
                         "file_time": -1,
-                        "total_time": 1.13325,
+                        "total_time": 1.396148,
                         "size_upload": 0.0,
-                        "size_download": 74563.0,
+                        "size_download": 74636.0,
                         "content_length_download": -1.0,
                         "content_length_upload": 0.0,
                         "content_type": "application/json"
@@ -1630,15 +1919,14 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 352.43903279304504, 448.7804985046387, 128.0, 22.0 ],
-                    "presentation_linecount": 2,
+                    "patching_rect": [ 320.0, 335.0, 167.0, 22.0 ],
                     "saved_object_attributes": {
                         "embed": 1,
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict fireball @embed 1"
+                    "text": "dict NASA_fireball @embed 1"
                 }
             },
             {
@@ -1648,7 +1936,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "dictionary", "" ],
-                    "patching_rect": [ 352.43903279304504, 317.0731782913208, 45.0, 22.0 ],
+                    "patching_rect": [ 320.0, 204.0, 45.0, 22.0 ],
                     "text": "maxurl"
                 }
             },
@@ -1666,7 +1954,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 352.43903279304504, 281.70732378959656, 99.0, 23.0 ],
+                    "patching_rect": [ 320.0, 168.0, 99.0, 23.0 ],
                     "saved_object_attributes": {
                         "embed": 1,
                         "legacy": 0,
@@ -1683,7 +1971,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 353.65854501724243, 210.40000313520432, 209.0, 22.0 ],
+                    "patching_rect": [ 320.0, 97.0, 209.0, 22.0 ],
                     "text": "https://ssd-api.jpl.nasa.gov/fireball.api"
                 }
             },
@@ -1694,8 +1982,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 254.40651400883985, 704.6585533618927, 112.0, 22.0 ],
-                    "text": "get body::data[454]"
+                    "patching_rect": [ 214.0, 628.0, 112.0, 22.0 ],
+                    "text": "get body::data[24]"
                 }
             },
             {
@@ -1705,7 +1993,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 185.04879069328308, 776.829286813736, 55.0, 22.0 ],
+                    "patching_rect": [ 145.0, 700.0, 55.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
@@ -1716,7 +2004,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 174.0731806755066, 745.1219689846039, 67.0, 22.0 ],
+                    "patching_rect": [ 134.0, 669.0, 67.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -1734,7 +2022,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 174.0731806755066, 703.6585533618927, 80.0, 23.0 ],
+                    "patching_rect": [ 134.0, 627.0, 80.0, 23.0 ],
                     "text": "prepend get"
                 }
             },
@@ -1747,7 +2035,7 @@
                     "numinlets": 4,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 174.0731806755066, 671.9512355327606, 218.0, 23.0 ],
+                    "patching_rect": [ 134.0, 595.0, 218.0, 23.0 ],
                     "text": "combine body::data [ 0 ] @triggers 2"
                 }
             },
@@ -1758,19 +2046,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 64.0, 153.0, 193.0, 22.0 ],
+                    "patching_rect": [ 32.0, 97.0, 193.0, 22.0 ],
                     "text": "https://ssd-api.jpl.nasa.gov/cad.api"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-470",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 64.0, 391.0, 61.0, 22.0 ],
-                    "text": "get body::"
                 }
             },
             {
@@ -1781,7 +2058,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 25.0, 411.0, 24.0, 24.0 ]
+                    "patching_rect": [ 32.0, 279.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -1791,8 +2068,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 112.0, 311.0, 141.0, 22.0 ],
-                    "text": "progress 0. 5979. 0. 0."
+                    "patching_rect": [ 80.0, 197.0, 141.0, 22.0 ],
+                    "text": "progress 0. 7544. 0. 0."
                 }
             },
             {
@@ -1802,7 +2079,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "bang", "" ],
-                    "patching_rect": [ 64.0, 356.0, 189.10660907626152, 22.0 ],
+                    "patching_rect": [ 32.0, 242.0, 189.10660907626152, 22.0 ],
                     "text": "t b l"
                 }
             },
@@ -1813,7 +2090,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 64.0, 194.0, 91.0, 22.0 ],
+                    "patching_rect": [ 32.0, 130.0, 91.0, 22.0 ],
                     "text": "set url $1, bang"
                 }
             },
@@ -1823,7 +2100,7 @@
                     "maxclass": "dict.view",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 63.41463565826416, 482.9268407821655, 209.75610256195068, 69.5121967792511 ]
+                    "patching_rect": [ 31.0, 369.0, 209.75610256195068, 69.5121967792511 ]
                 }
             },
             {
@@ -1834,52 +2111,61 @@
                                 "version": "1.5",
                                 "source": "NASA/JPL SBDB Close Approach Data API"
                             },
-                            "count": 33,
+                            "count": 42,
                             "fields": [ "des", "orbit_id", "jd", "cd", "dist", "dist_min", "dist_max", "v_rel", "v_inf", "t_sigma_f", "h" ],
                             "data": [
-                                [ "2025 XK1", "3", "2461021.595999393", "2025-Dec-12 02:18", "0.00671445305416677", "0.00670849951353992", "0.00672040613454586", "4.31905259189986", "4.22617562050679", "< 00:01", "27.341" ],
-                                [ "2025 WH20", "6", "2461021.933847270", "2025-Dec-12 10:25", "0.0280142146801157", "0.0279052362446761", "0.0281231910789139", "8.9144913137584", "8.90381558661864", "< 00:01", "25.643" ],
-                                [ "2025 XG2", "2", "2461021.945744315", "2025-Dec-12 10:42", "0.0100491681105991", "0.0100237780762308", "0.0100745572058634", "8.31211064941491", "8.28015065738821", "< 00:01", "26.76" ],
-                                [ "2025 XF2", "2", "2461022.337804294", "2025-Dec-12 20:06", "0.00338876774114684", "0.00338487961634162", "0.00339265558854317", "6.9488621874138", "6.83477504197962", "< 00:01", "28.984" ],
-                                [ "2025 XF1", "3", "2461022.511654248", "2025-Dec-13 00:17", "0.00209805329994707", "0.00209679350495904", "0.00209931283022732", "3.55734393086008", "3.1803682075276", "< 00:01", "27.958" ],
-                                [ "2025 WY9", "3", "2461022.989460720", "2025-Dec-13 11:45", "0.0371495264707445", "0.037015064539607", "0.0372839834086094", "5.29143231513647", "5.2778603371388", "< 00:01", "26.549" ],
-                                [ "2016 YH", "8", "2461023.001778073", "2025-Dec-13 12:03", "0.0173664844673892", "0.0102662940015844", "0.0296423010334855", "8.87073267265774", "8.85341996646816", "9_03:36", "25.5" ],
-                                [ "2025 TZ", "11", "2461024.797082841", "2025-Dec-15 07:08", "0.0454886017942829", "0.0454838112946383", "0.0454933922911996", "6.21492888376074", "6.20549689486826", "< 00:01", "24.12" ],
-                                [ "2025 WA3", "17", "2461025.395036115", "2025-Dec-15 21:29", "0.0227543819141228", "0.0227006736552119", "0.0228080900143742", "19.4097165421996", "19.4036826766305", "< 00:01", "20.682" ],
-                                [ "2025 XJ2", "1", "2461026.837373535", "2025-Dec-17 08:06", "0.0145747864197876", "0.0144808084046338", "0.0146687609831322", "11.9542137836281", "11.9389111140847", "00:09", "26.376" ],
-                                [ "2025 WN6", "3", "2461026.956153154", "2025-Dec-17 10:57", "0.0407518796268367", "0.0405712920824595", "0.0409324429181092", "2.92422391258671", "2.90177868394112", "00:05", "24.968" ],
-                                [ "2025 XV", "4", "2461027.658468646", "2025-Dec-18 03:48", "0.0173484866177486", "0.0172873752141113", "0.0174095966122673", "9.54565800335782", "9.52955483384455", "00:02", "22.758" ],
-                                [ "2015 XX168", "10", "2461028.304597314", "2025-Dec-18 19:19", "0.0154640665711628", "0.0154627856548468", "0.0154653474864855", "11.4319360790592", "11.4168542008152", "< 00:01", "25.6" ],
-                                [ "2025 XV1", "2", "2461029.693876318", "2025-Dec-20 04:39", "0.0432554777344612", "0.0427869652240035", "0.0437239790383526", "7.79052524277392", "7.78261435792724", "00:01", "25.937" ],
-                                [ "2010 WR7", "22", "2461029.996475182", "2025-Dec-20 11:55", "0.0496444071002821", "0.0496441573234091", "0.0496446568772454", "8.25569866885789", "8.2491949869233", "< 00:01", "23.5" ],
-                                [ "2025 WT3", "7", "2461031.558766115", "2025-Dec-22 01:25", "0.04088351104932", "0.0408549843867617", "0.04091203746189", "4.52386357131365", "4.50943418565528", "< 00:01", "25.756" ],
+                                [ "2025 XV", "9", "2461027.658472570", "2025-Dec-18 03:48", "0.0173464569258714", "0.0173184978412972", "0.0173744157088214", "9.54451711477408", "9.52841013110656", "< 00:01", "22.911" ],
+                                [ "2025 XQ5", "1", "2461028.077867673", "2025-Dec-18 13:52", "0.0391672061506407", "0.0390658709744187", "0.0392685404319131", "6.80289639920464", "6.79288913298092", "00:14", "25.318" ],
+                                [ "2025 YG", "1", "2461028.274309892", "2025-Dec-18 18:35", "0.0333097700678587", "0.0331286887723717", "0.0334908596317839", "15.297884982519", "15.2926552006919", "00:02", "24.889" ],
+                                [ "2025 XR5", "2", "2461028.282546022", "2025-Dec-18 18:47", "0.0375770994395766", "0.0374606051508735", "0.0376935934008528", "17.6263458022333", "17.6223225581269", "< 00:01", "24.178" ],
+                                [ "2015 XX168", "14", "2461028.304601491", "2025-Dec-18 19:19", "0.0154640331368818", "0.0154636652101294", "0.0154644010635708", "11.431893191", "11.4168112234702", "< 00:01", "25.6" ],
+                                [ "2025 XV3", "5", "2461028.926499523", "2025-Dec-19 10:14", "0.0376572093988585", "0.0375308120442299", "0.0377836062207155", "14.9695289620986", "14.9648015368557", "< 00:01", "24.11" ],
+                                [ "2025 XQ3", "4", "2461029.152707565", "2025-Dec-19 15:40", "0.0229676025752143", "0.0228488405674215", "0.0230863633218965", "15.0627449937932", "15.0550412178783", "< 00:01", "25.146" ],
+                                [ "2025 XV1", "4", "2461029.693720215", "2025-Dec-20 04:39", "0.0432760216819762", "0.0430272760787267", "0.0435247615195589", "7.79407039933344", "7.786166872074", "< 00:01", "25.841" ],
+                                [ "2010 WR7", "24", "2461029.996497817", "2025-Dec-20 11:55", "0.0496444013361051", "0.0496441634938443", "0.0496446391784083", "8.2556979699986", "8.2491942867576", "< 00:01", "23.5" ],
+                                [ "2025 XT4", "2", "2461030.091122255", "2025-Dec-20 14:11", "0.0167814026605312", "0.0167547857266456", "0.0168080188469159", "5.95920912610886", "5.93250553838497", "< 00:01", "27.907" ],
+                                [ "2025 XC4", "4", "2461030.349322319", "2025-Dec-20 20:23", "0.0372573231319838", "0.0370132205124985", "0.0375014207116307", "9.60460700959551", "9.59715815408609", "< 00:01", "25.989" ],
+                                [ "2025 XX4", "3", "2461030.414708317", "2025-Dec-20 21:57", "0.0428068369105177", "0.0426244748098317", "0.0429891934045772", "5.87515988165752", "5.8645558348997", "< 00:01", "25.751" ],
+                                [ "2025 YF", "1", "2461030.504936434", "2025-Dec-21 00:07", "0.0270910330985228", "0.0269859193948841", "0.0271961440946298", "7.65322117067476", "7.64035919701157", "00:02", "24.995" ],
+                                [ "2025 XQ6", "2", "2461030.841676015", "2025-Dec-21 08:12", "0.0291143990113875", "0.0286707608226546", "0.0295580188335029", "11.5245287854497", "11.5165849350767", "< 00:01", "24.525" ],
+                                [ "2025 XH6", "2", "2461030.867888096", "2025-Dec-21 08:50", "0.0165276949045013", "0.0164575627459671", "0.0165978259888435", "13.4003271703965", "13.3882912377372", "00:02", "27.006" ],
+                                [ "2025 WT3", "9", "2461031.558763497", "2025-Dec-22 01:25", "0.0408833199222675", "0.0408624169657098", "0.0409042227415845", "4.52384328158152", "4.50941376343459", "< 00:01", "25.718" ],
+                                [ "2025 XN5", "3", "2461034.794169648", "2025-Dec-25 07:04", "0.0289702961547242", "0.0288205674641749", "0.0291200236476827", "15.5102681879983", "15.5043372530991", "00:02", "24.301" ],
+                                [ "2025 XP3", "3", "2461035.583851064", "2025-Dec-26 02:01", "0.0341655978053758", "0.0339969828539449", "0.0343342113378929", "13.4993949313329", "13.4936166060253", "00:05", "24.094" ],
+                                [ "2025 XJ4", "3", "2461037.141118447", "2025-Dec-27 15:23", "0.0368521874992995", "0.0366423033700682", "0.0370620648207476", "6.70347633717572", "6.69268192963963", "00:05", "24.856" ],
+                                [ "2025 YJ", "1", "2461037.528041853", "2025-Dec-28 00:40", "0.0478735991078353", "0.0473638720856803", "0.0483833013407574", "7.37772763850801", "7.37017991700476", "00:03", "26.366" ],
                                 [ "2021 AB1", "3", "2461037.892055827", "2025-Dec-28 09:25", "0.0260970621672373", "0.0122901063243951", "0.0951655292856805", "12.2667788478393", "12.2584528246942", "2_10:41", "26.7" ],
                                 [ "2019 AU", "11", "2461040.142309181", "2025-Dec-30 15:25", "0.0494518064039716", "0.043527421822107", "0.0553869626576221", "2.83641644387542", "2.81735649068861", "23:15", "26.7" ],
                                 [ "2024 AV2", "7", "2461040.418510275", "2025-Dec-30 22:03", "0.0458574513176268", "0.0458567260041847", "0.0458581766311392", "7.04399535624211", "7.03574186129884", "< 00:01", "26.64" ],
                                 [ "2014 AF16", "9", "2461044.775917715", "2026-Jan-04 06:37", "0.0229782282500891", "0.0172898208272927", "0.0286690013771272", "9.5688353284524", "9.55670948385717", "21:45", "25.1" ],
+                                [ "2025 XS4", "2", "2461046.598283235", "2026-Jan-06 02:22", "0.0204112821196936", "0.0202999166844767", "0.0205226402653857", "6.48639170258761", "6.4662352449764", "00:20", "25.855" ],
                                 [ "2023 XM15", "3", "2461047.633140387", "2026-Jan-07 03:12", "0.0389042233675674", "0.0218403258325833", "0.05849319719378", "6.88957951393025", "6.87963149628384", "3_03:03", "24.21" ],
+                                [ "2025 YL", "1", "2461053.093304681", "2026-Jan-12 14:14", "0.0197486434625312", "0.0191181758168626", "0.0203806325045434", "3.86589103482567", "3.83083205931181", "11:28", "27.153" ],
                                 [ "2022 GR3", "2", "2461053.366755332", "2026-Jan-12 20:48", "0.0371230714893605", "0.00496349669036914", "0.089931479298529", "12.8538196925184", "12.8482345968816", "6_11:06", "27.91" ],
+                                [ "2025 XN1", "5", "2461054.783329235", "2026-Jan-14 06:48", "0.0236950381600491", "0.0235385911608224", "0.02385146742062", "4.73017707717687", "4.70634439026119", "00:41", "25.01" ],
                                 [ "2022 OB5", "13", "2461054.806436857", "2026-Jan-14 07:21", "0.00431413690121743", "0.0043140453737969", "0.00431422843548725", "2.19151788580906", "1.88878769048139", "< 00:01", "28.96" ],
-                                [ "2025 XN1", "2", "2461054.849465179", "2026-Jan-14 08:23", "0.0236882317868477", "0.0233849900243632", "0.023991917295701", "4.71390132331926", "4.68997904090421", "15:41", "24.978" ],
                                 [ "2025 BL", "8", "2461057.801528598", "2026-Jan-17 07:14", "0.0119818424689245", "0.0107187432087166", "0.0134057630622573", "6.9005680991379", "6.86826668332947", "01:31", "25.49" ],
-                                [ "2004 MO3", "31", "2461058.001886319", "2026-Jan-17 12:03", "0.0434271917706912", "0.0434259691532757", "0.0434284144223233", "10.227422307926", "10.2214214706686", "< 00:01", "22.2" ],
+                                [ "2004 MO3", "32", "2461058.001869993", "2026-Jan-17 12:03", "0.0434272972631627", "0.0434262664576395", "0.0434283280916508", "10.2274274212465", "10.2214266015723", "< 00:01", "22.2" ],
                                 [ "2019 LZ4", "3", "2461064.281738848", "2026-Jan-23 18:46", "0.0363032334100764", "0.0268552846372582", "0.0540120778040999", "11.613523056668", "11.6072015401529", "1_20:41", "24.5" ],
                                 [ "2022 AG", "20", "2461069.868898540", "2026-Jan-29 08:51", "0.0351480021645696", "0.0338521197672379", "0.0364449992451759", "5.29166274851015", "5.27731748195455", "02:43", "25.12" ],
                                 [ "2020 GE", "24", "2461070.350379196", "2026-Jan-29 20:25", "0.0415862553705553", "0.0415831429028947", "0.0415893678791185", "1.22028488974166", "1.16659886240619", "00:19", "28.17" ],
                                 [ "2023 RX1", "3", "2461071.556870957", "2026-Jan-31 01:22", "0.0225244326040695", "0.022461458638177", "0.022590036170303", "1.22704061360152", "1.12651807196905", "08:11", "30.25" ],
                                 [ "2022 OC3", "5", "2461072.487111882", "2026-Jan-31 23:41", "0.003343331039163", "0.00330953283564879", "0.00377968271971665", "3.78294343140517", "3.5660558080697", "01:49", "28.37" ],
                                 [ "2021 CZ5", "3", "2461080.650575984", "2026-Feb-09 03:37", "0.046858437226366", "0.0433279189156508", "0.107442009919057", "9.2777879119911", "9.27165702044462", "1_18:14", "25.9" ],
-                                [ "2025 CC", "2", "2461080.765509190", "2026-Feb-09 06:22", "0.0450300657589655", "0.0447733681996139", "0.0453964977976591", "5.06072442548049", "5.04901866450275", "06:29", "27.57" ]
+                                [ "2025 CC", "2", "2461080.765509190", "2026-Feb-09 06:22", "0.0450300657589655", "0.0447733681996139", "0.0453964977976591", "5.06072442548049", "5.04901866450275", "06:29", "27.57" ],
+                                [ "2022 DV", "10", "2461084.463933700", "2026-Feb-12 23:08", "0.0394934471384719", "0.0260718050971451", "0.0530455427130066", "5.00460864481353", "4.99110959174532", "3_01:15", "26.53" ],
+                                [ "1999 AO10", "17", "2461084.749404098", "2026-Feb-13 05:59", "0.0268075232567627", "0.0268059544911652", "0.0271614716318974", "2.68685782864219", "2.64960733932081", "4_15:18", "23.9" ],
+                                [ "162882", "123", "2461086.091162513", "2026-Feb-14 14:11", "0.0434384594901147", "0.0434380347504076", "0.0434388842322589", "19.161946929588", "19.1587455690381", "< 00:01", "18.77" ]
                             ]
                         },
-                        "header": "HTTP/1.1 200 OK\r\nDate: Fri, 12 Dec 2025 16:15:32 GMT\r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nServer: nginx\r\nX-Robots-Tag: noindex, nofollow, noarchive\r\nSet-Cookie: AWSALBAPP-0=_remove_; Expires=Fri, 19 Dec 2025 16:15:32 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-1=_remove_; Expires=Fri, 19 Dec 2025 16:15:32 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-2=_remove_; Expires=Fri, 19 Dec 2025 16:15:32 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-3=_remove_; Expires=Fri, 19 Dec 2025 16:15:32 GMT; Path=/\r\n\r\n",
+                        "header": "HTTP/1.1 200 OK\r\nDate: Thu, 18 Dec 2025 10:18:17 GMT\r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nServer: nginx\r\nX-Robots-Tag: noindex, nofollow, noarchive\r\nSet-Cookie: AWSALBAPP-0=_remove_; Expires=Thu, 25 Dec 2025 10:18:17 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-1=_remove_; Expires=Thu, 25 Dec 2025 10:18:17 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-2=_remove_; Expires=Thu, 25 Dec 2025 10:18:17 GMT; Path=/\r\nSet-Cookie: AWSALBAPP-3=_remove_; Expires=Thu, 25 Dec 2025 10:18:17 GMT; Path=/\r\n\r\n",
                         "status": 200,
                         "connect_code": 0,
                         "url": "https://ssd-api.jpl.nasa.gov/cad.api",
                         "file_time": -1,
-                        "total_time": 0.240988,
+                        "total_time": 0.331739,
                         "size_upload": 0.0,
-                        "size_download": 5979.0,
+                        "size_download": 7544.0,
                         "content_length_download": -1.0,
                         "content_length_upload": 0.0,
                         "content_type": "application/json"
@@ -1889,15 +2175,14 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 64.0, 443.0, 125.0, 22.0 ],
-                    "presentation_linecount": 4,
+                    "patching_rect": [ 32.0, 329.0, 155.0, 22.0 ],
                     "saved_object_attributes": {
                         "embed": 1,
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict NASA @embed 1"
+                    "text": "dict NASA_cad @embed 1"
                 }
             },
             {
@@ -1907,7 +2192,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "dictionary", "" ],
-                    "patching_rect": [ 64.0, 311.0, 45.0, 22.0 ],
+                    "patching_rect": [ 32.0, 197.0, 45.0, 22.0 ],
                     "text": "maxurl"
                 }
             },
@@ -1925,7 +2210,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 64.0, 276.0, 99.0, 23.0 ],
+                    "patching_rect": [ 32.0, 162.0, 99.0, 23.0 ],
                     "saved_object_attributes": {
                         "embed": 1,
                         "legacy": 0,
@@ -1942,8 +2227,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 120.00000178813934, 652.0000097155571, 44.0, 22.0 ],
-                    "text": "fireball"
+                    "patching_rect": [ 45.0, 571.0, 83.0, 22.0 ],
+                    "text": "NASA_fireball"
                 }
             },
             {
@@ -1953,12 +2238,18 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 74.40000110864639, 692.8000103235245, 77.0, 22.0 ],
+                    "patching_rect": [ 34.0, 616.0, 77.0, 22.0 ],
                     "text": "dictionary $1"
                 }
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-46", 0 ],
+                    "source": [ "obj-1", 0 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-9", 0 ],
@@ -2003,8 +2294,20 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-479", 0 ],
+                    "source": [ "obj-15", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-14", 0 ],
                     "source": [ "obj-16", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-3", 0 ],
+                    "source": [ "obj-17", 0 ]
                 }
             },
             {
@@ -2015,8 +2318,20 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-10", 0 ],
+                    "source": [ "obj-19", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-477", 0 ],
                     "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-481", 0 ],
+                    "source": [ "obj-20", 0 ]
                 }
             },
             {
@@ -2033,8 +2348,20 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-12", 0 ],
+                    "source": [ "obj-23", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-70", 2 ],
                     "source": [ "obj-24", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-27", 1 ],
+                    "source": [ "obj-26", 0 ]
                 }
             },
             {
@@ -2045,16 +2372,14 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-30", 1 ],
-                    "order": 0,
+                    "destination": [ "obj-31", 0 ],
                     "source": [ "obj-29", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-31", 0 ],
-                    "order": 1,
-                    "source": [ "obj-29", 0 ]
+                    "destination": [ "obj-1", 0 ],
+                    "source": [ "obj-3", 0 ]
                 }
             },
             {
@@ -2067,6 +2392,12 @@
                 "patchline": {
                     "destination": [ "obj-22", 0 ],
                     "source": [ "obj-33", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-35", 1 ],
+                    "source": [ "obj-34", 0 ]
                 }
             },
             {
@@ -2085,6 +2416,12 @@
                 "patchline": {
                     "destination": [ "obj-60", 1 ],
                     "source": [ "obj-37", 8 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-56", 0 ],
+                    "source": [ "obj-39", 0 ]
                 }
             },
             {
@@ -2113,14 +2450,14 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-470", 0 ],
+                    "destination": [ "obj-472", 0 ],
                     "source": [ "obj-476", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-479", 0 ],
-                    "midpoints": [ 243.60660907626152, 436.71072889864445, 73.5, 436.71072889864445 ],
+                    "midpoints": [ 211.60660907626152, 323.31072576344013, 41.5, 323.31072576344013 ],
                     "source": [ "obj-476", 1 ]
                 }
             },
@@ -2134,6 +2471,12 @@
                 "patchline": {
                     "destination": [ "obj-478", 0 ],
                     "source": [ "obj-479", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-39", 0 ],
+                    "source": [ "obj-48", 0 ]
                 }
             },
             {
@@ -2156,6 +2499,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-74", 0 ],
+                    "source": [ "obj-56", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-57", 0 ],
                     "source": [ "obj-59", 0 ]
                 }
@@ -2174,6 +2523,18 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-26", 0 ],
+                    "source": [ "obj-65", 1 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-34", 0 ],
+                    "source": [ "obj-65", 2 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-69", 1 ],
                     "source": [ "obj-65", 0 ]
                 }
@@ -2187,7 +2548,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-116", 1 ],
-                    "midpoints": [ 183.5731806755066, 736.4756302833557, 356.90651400883985, 736.4756302833557 ],
+                    "midpoints": [ 143.5, 659.9756302833557, 316.5, 659.9756302833557 ],
                     "order": 0,
                     "source": [ "obj-68", 0 ]
                 }
@@ -2207,20 +2568,14 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-85", 0 ],
-                    "source": [ "obj-72", 0 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-76", 0 ],
                     "source": [ "obj-73", 1 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-72", 0 ],
-                    "source": [ "obj-75", 0 ]
+                    "destination": [ "obj-79", 0 ],
+                    "source": [ "obj-74", 0 ]
                 }
             },
             {
@@ -2231,46 +2586,32 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-72", 1 ],
+                    "destination": [ "obj-14", 0 ],
                     "source": [ "obj-79", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-10", 0 ],
-                    "midpoints": [ 532.0456418693066, 442.418052688241, 361.93903279304504, 442.418052688241 ],
+                    "midpoints": [ 499.6066090762615, 329.0180495530367, 329.5, 329.0180495530367 ],
                     "source": [ "obj-8", 1 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-5", 0 ],
+                    "destination": [ "obj-6", 0 ],
                     "source": [ "obj-8", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-72", 2 ],
-                    "source": [ "obj-80", 0 ]
+                    "destination": [ "obj-82", 0 ],
+                    "source": [ "obj-83", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-72", 0 ],
-                    "source": [ "obj-82", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-14", 0 ],
-                    "order": 1,
-                    "source": [ "obj-85", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-87", 1 ],
-                    "order": 0,
+                    "destination": [ "obj-83", 0 ],
                     "source": [ "obj-85", 0 ]
                 }
             }
@@ -2293,6 +2634,6 @@
                 "multi": 0
             }
         ],
-        "toolbaradditions": [ "BEAP", "Vizzie", "Vsynth" ]
+        "toolbaradditions": [ "BEAP", "Vizzie", "Vsynth", "Data Knot" ]
     }
 }
