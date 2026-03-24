@@ -1,3 +1,19 @@
-.DS_Store
-node_modules
+# macOS
+**/.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment / secrets
+.env
+
+# Binaries & media
+*.apk
+*.mxo/
+*.mp3
+
+# Logs
+*.log
 
