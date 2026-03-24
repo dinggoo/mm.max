@@ -4,8 +4,8 @@
 #include <Servo.h>
 
 #define NUM_STRIPS 2
-#define NUM_PIXELS 8
-#define PIN_STRIP01 6
+#define NUM_PIXELS 16
+#define PIN_STRIP01 2
 #define PIN_STRIP02 7
 
 Adafruit_NeoPixel strips[NUM_STRIPS] = {
