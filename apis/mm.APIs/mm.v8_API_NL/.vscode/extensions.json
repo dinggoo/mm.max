@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "vscode-arduino.vscode-arduino-community",
+    "rangav.vscode-thunder-client",
+    "humao.rest-client"
+  ]
+}

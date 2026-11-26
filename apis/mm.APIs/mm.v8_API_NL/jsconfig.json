@@ -1,0 +1,11 @@
+{
+  // VS Code: autocomplete voor de v8-scripts in deze map.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "checkJs": false,
+    "lib": ["ES2022"]
+  },
+  "include": ["*.js", "types/*.d.ts"],
+  "exclude": ["tools"]
+}

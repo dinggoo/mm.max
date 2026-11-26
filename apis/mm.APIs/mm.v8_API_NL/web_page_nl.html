@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web-API → Max → Arduino</title>
+<!--
+  Deze pagina wordt geserveerd door web_server_nl.js in Max.
+  Elke halve seconde vraagt hij /state aan Max en toont de vier kanalen.
+  De knoppen sturen een bericht terug naar Max via /cmd?m=...
+  Verander gerust alles: kleuren, tekst, opmaak. Herlaad de pagina om het te zien.
+-->
+<style>
+  :root {
+    --bg: #f4f4f2; --card: #ffffff; --text: #1d1d1f; --muted: #6b6b70;
+    --accent: #4a6cf7; --bar: #e6e6ea; --line: #e0e0e4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161618; --card: #222226; --text: #f2f2f4; --muted: #9a9aa2;
+            --accent: #7d95ff; --bar: #34343a; --line: #34343a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; font: 16px/1.4 system-ui, -apple-system, sans-serif;
+         background: var(--bg); color: var(--text); }
+  h1 { margin: 0 0 4px; font-size: 24px; }
+  #status { color: var(--muted); margin-bottom: 20px; min-height: 1.4em; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  button { font: inherit; padding: 8px 14px; border-radius: 8px; cursor: pointer;
+           border: 1px solid var(--line); background: var(--card); color: var(--text); }
+  button:hover { border-color: var(--accent); }
+  button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .name { color: var(--muted); font-size: 13px; }
+  .label { font-weight: 600; margin: 2px 0 10px; min-height: 1.4em; }
+  .value { font-size: 32px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .text { color: var(--muted); font-size: 14px; min-height: 1.4em; overflow-wrap: anywhere; }
+  .bar { height: 10px; border-radius: 5px; background: var(--bar); margin-top: 12px; overflow: hidden; }
+  .fill { height: 100%; width: 0; background: var(--accent); transition: width .4s; }
+  .range { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  #offline { display: none; color: #d33; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+  <h1>Web-API → Max → Arduino</h1>
+  <div id="status">…</div>
+  <div id="offline">Geen verbinding met Max. Staat de patch open?</div>
+
+  <div class="buttons">
+    <button data-cmd="api weather">weer</button>
+    <button data-cmd="api air">lucht</button>
+    <button data-cmd="api energy">energie</button>
+    <button data-cmd="api iss">ISS</button>
+    <button data-cmd="api bitcoin">bitcoin</button>
+    <button data-cmd="api quakes">aardbevingen</button>
+    <button data-cmd="bang">nu ophalen</button>
+    <button id="auto">auto</button>
+  </div>
+
+  <div class="channels" id="channels"></div>
+
+<script>
+  const CHANNEL = "kanaal";
+
+  // bouw de vier kaarten één keer
+  const list = document.getElementById("channels");
+  for (let ch = 1; ch <= 4; ch++) {
+    list.insertAdjacentHTML("beforeend", `
+      <div class="card" id="ch${ch}">
+        <div class="name">${CHANNEL} ${ch}</div>
+        <div class="label"></div>
+        <div class="value">–</div>
+        <div class="text"></div>
+        <div class="bar"><div class="fill"></div></div>
+        <div class="range"><span></span><span></span></div>
+      </div>`);
+  }
+
+  // knoppen → Max
+  let auto = 0;
+  function send(message) {
+    fetch("/cmd?m=" + encodeURIComponent(message));
+  }
+  document.querySelectorAll("[data-cmd]").forEach((b) => b.onclick = () => send(b.dataset.cmd));
+  document.getElementById("auto").onclick = () => send("auto " + (auto ? 0 : 1));
+
+  // Max → pagina, elke halve seconde
+  async function update() {
+    try {
+      const state = await (await fetch("/state")).json();
+      document.getElementById("offline").style.display = "none";
+      document.getElementById("status").textContent = state.status;
+      auto = state.auto;
+      document.getElementById("auto").classList.toggle("on", auto === 1);
+
+      for (let ch = 1; ch <= 4; ch++) {
+        const c = state.channels[ch] || {};
+        const card = document.getElementById("ch" + ch);
+        const used = c.label && c.label !== "-";
+        card.style.opacity = used ? 1 : 0.4;
+        card.querySelector(".label").textContent = used ? c.label : "";
+        const hasNumber = typeof c.value === "number";
+        card.querySelector(".value").textContent = hasNumber ? round(c.value) : "–";
+        card.querySelector(".text").textContent = !hasNumber && c.show && c.show !== "-" ? c.show : "";
+        const [lo, hi] = c.range || [0, 1];
+        const pct = hasNumber && hi !== lo ? Math.min(100, Math.max(0, (c.value - lo) / (hi - lo) * 100)) : 0;
+        card.querySelector(".fill").style.width = pct + "%";
+        const spans = card.querySelectorAll(".range span");
+        spans[0].textContent = c.range ? lo : "";
+        spans[1].textContent = c.range ? hi : "";
+      }
+    } catch {
+      document.getElementById("offline").style.display = "block";
+    }
+  }
+  function round(n) {
+    return Math.abs(n) >= 100 ? n.toFixed(0) : Math.abs(n) >= 10 ? n.toFixed(1) : n.toFixed(2);
+  }
+  update();
+  setInterval(update, 500);
+</script>
+</body>
+</html>

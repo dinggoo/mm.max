@@ -1,0 +1,11 @@
+{
+  // VS Code: autocomplete for the v8 scripts in this folder.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "checkJs": false,
+    "lib": ["ES2022"]
+  },
+  "include": ["*.js", "types/*.d.ts"],
+  "exclude": ["tools"]
+}

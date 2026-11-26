@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web-API → browser → Arduino</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Web-API → browser → Arduino</h1>
+  <p class="intro">Hetzelfde als de Max-patch mm.v8_API, maar alleen met HTML, CSS en JavaScript.
+    Werk van 1 naar 5. De code staat in app.js, de API's in presets.js, het USB-deel in arduino.js.</p>
+
+  <div class="grid2">
+    <section>
+      <h2>1 · Kies een API</h2>
+      <div class="buttons" id="presets"></div>
+      <div class="row">
+        <input id="url" placeholder="of typ het adres van je eigen API: https://...">
+        <button id="use-url">gebruik</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>2 · Ophalen</h2>
+      <div class="row">
+        <button id="fetch">nu ophalen</button>
+        <label><input id="auto" type="checkbox"> automatisch, elke</label>
+        <input id="interval" type="number" min="1" value="5"> s
+      </div>
+      <div id="status"></div>
+    </section>
+  </div>
+  <br>
+
+  <section>
+    <h2>3 · Data bekijken</h2>
+    <div class="row">
+      <select id="paths"><option value="">eerst ophalen…</option></select>
+      gekozen pad → kanaal
+      <button data-to-channel="1">1</button><button data-to-channel="2">2</button>
+      <button data-to-channel="3">3</button><button data-to-channel="4">4</button>
+    </div>
+    <div id="peek"></div>
+    <details><summary>de volledige JSON</summary><pre id="json"></pre></details>
+  </section>
+
+  <section>
+    <h2>4 · Kanalen: van data naar 0..255</h2>
+    <p class="small">bereik = welke waardes je verwacht; dat wordt 0..255. Sleep een slider om de actuator te testen.</p>
+    <div class="channels" id="channels"></div>
+  </section>
+
+  <section>
+    <h2>5 · Arduino (USB)</h2>
+    <p class="small">Upload eerst put_this_on-your_arduino (de CMD-sketch) en sluit de Arduino Serial Monitor.
+      Werkt in Chrome of Edge, op http://localhost of https://.</p>
+    <div class="row">
+      <button id="connect">Verbind Arduino</button>
+      <span id="serial-status"></span>
+      <label><input id="show-log" type="checkbox"> toon berichten</label>
+    </div>
+    <pre id="log"></pre>
+  </section>
+
+  <script src="presets.js"></script>
+  <script src="arduino.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

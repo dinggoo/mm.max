@@ -3,13 +3,13 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 154.0, 109.0, 1205.0, 679.0 ],
+        "rect": [ 1986.0, 406.0, 1205.0, 679.0 ],
         "gridonopen": 2,
         "subpatcher_template": "Untitled1_template",
         "boxes": [
@@ -138,7 +138,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 689.6, 577.5, 71.6000006198883, 69.0 ],
-                    "text": "♊"
+                    "text": "♋"
                 }
             },
             {
@@ -533,7 +533,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 497.79999999999995, 619.0, 76.0, 22.0 ],
-                    "text": "28.01 days"
+                    "text": "16.64 days"
                 }
             },
             {
@@ -571,12 +571,17 @@
             },
             {
                 "box": {
+                    "depthbuffer": 1,
+                    "doublebuffer": 1,
+                    "fsaa": 0,
                     "id": "obj-93",
                     "maxclass": "jit.pwindow",
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "jit_matrix", "" ],
                     "patching_rect": [ 1059.0, 479.0, 269.33334136009216, 249.33334076404572 ],
+                    "pwinoutlettype": 0,
+                    "stereo": 0,
                     "sync": 1
                 }
             },
@@ -645,7 +650,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 257.0, 601.0, 77.60000115633011, 22.0 ],
-                    "text": "2025-12-18"
+                    "text": "2026-11-26"
                 }
             },
             {
@@ -668,7 +673,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 363.0, 614.0, 58.0, 35.0 ],
-                    "text": "Waning Crescent"
+                    "text": "Waning Gibbous"
                 }
             },
             {
@@ -759,7 +764,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
@@ -1434,7 +1439,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -1564,7 +1569,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -1641,7 +1646,7 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
+                                                            "minor": 2,
                                                             "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
@@ -1785,7 +1790,7 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
+                                                            "minor": 2,
                                                             "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
@@ -1859,7 +1864,7 @@
                                                                         "fileversion": 1,
                                                                         "appversion": {
                                                                             "major": 9,
-                                                                            "minor": 1,
+                                                                            "minor": 2,
                                                                             "revision": 1,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
@@ -2532,7 +2537,7 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
+                                                            "minor": 2,
                                                             "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
@@ -2652,7 +2657,7 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
+                                                            "minor": 2,
                                                             "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
@@ -3895,7 +3900,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -6618,7 +6623,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -8153,7 +8158,7 @@
                                 }
                             }
                         ],
-                        "toolbaradditions": [ "BEAP", "Vizzie", "TS.Modular", "Vsynth", "Data Knot" ]
+                        "toolbaradditions": [ "BEAP", "Vizzie", "TS.Modular", "Vsynth", "Data Knot", "Auzzie", "ABL Effect Modules" ]
                     },
                     "patching_rect": [ 742.0, 171.0, 641.0, 249.0 ],
                     "viewvisibility": 1
@@ -8191,7 +8196,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 420.0, 194.0, 141.0, 22.0 ],
-                    "text": "progress 0. 2196. 0. 0."
+                    "text": "progress 0. 2530. 0. 0."
                 }
             },
             {
@@ -8256,7 +8261,7 @@
                 "box": {
                     "data": {
                         "http_method": "get",
-                        "url": "https://api.viewbits.com/v1/moonphase?startdate=2025-month-day",
+                        "url": "https://api.viewbits.com/v1/moonphase",
                         "parse_type": "json"
                     },
                     "fontname": "Arial",
@@ -8651,6 +8656,6 @@
             "inherited_shortname": 1
         },
         "autosave": 0,
-        "toolbaradditions": [ "BEAP", "Vizzie", "Vsynth", "Data Knot" ]
+        "toolbaradditions": [ "BEAP", "Vizzie", "Vsynth", "Data Knot", "Auzzie", "ABL Effect Modules" ]
     }
 }

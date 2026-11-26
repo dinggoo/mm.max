@@ -1,0 +1,5 @@
+{
+  "files.associations": { "*.maxpat": "json", "*.maxhelp": "json" },
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2
+}

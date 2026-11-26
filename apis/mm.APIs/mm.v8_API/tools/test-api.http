@@ -1,0 +1,13 @@
+### Try these in VS Code with the "REST Client" extension: click "Send Request" above a line.
+### That way you see the JSON and its paths before you use them in Max.
+
+GET https://api.open-meteo.com/v1/forecast?latitude=52.37&longitude=4.89&current=temperature_2m,wind_speed_10m
+
+###
+GET https://api.wheretheiss.at/v1/satellites/25544
+
+###
+GET https://api.carbonintensity.org.uk/generation
+
+###
+GET https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson
