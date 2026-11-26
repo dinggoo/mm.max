@@ -1,0 +1,13 @@
+### Proberen in VS Code met de extensie "REST Client": klik op "Send Request" boven een regel.
+### Zo zie je de JSON en de paden voordat je ze in Max gebruikt.
+
+GET https://api.open-meteo.com/v1/forecast?latitude=52.37&longitude=4.89&current=temperature_2m,wind_speed_10m
+
+###
+GET https://api.wheretheiss.at/v1/satellites/25544
+
+###
+GET https://api.carbonintensity.org.uk/generation
+
+###
+GET https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson

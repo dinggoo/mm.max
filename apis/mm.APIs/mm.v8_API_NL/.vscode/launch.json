@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "api_reader_nl.js testen (zonder Max)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/run-in-node.js",
+      "args": ["api iss", "paths"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
