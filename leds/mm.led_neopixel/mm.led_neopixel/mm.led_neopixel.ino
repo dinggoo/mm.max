@@ -23,7 +23,7 @@ struct StripConfig {
 
 // Initialize your strips here
 StripConfig strips[MAX_STRIPS] = {
-  {2, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 0: Pin 2, 30 pixels
+  {2, 40, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 0: Pin 2, 30 pixels
   {3, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 1: Pin 3, 30 pixels
   {4, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false},  // Strip 2: Pin 4, 30 pixels
   {5, 30, nullptr, 0, 0, 0, DEFAULT_FADE_TIME, false}   // Strip 3: Pin 5, 30 pixels
